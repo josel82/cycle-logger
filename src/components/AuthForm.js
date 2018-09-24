@@ -18,11 +18,13 @@ class AuthForm extends Component {
 
     render(){
         return (
-            <form onSubmit={this.handleOnSubmit}>
-                <input type="text" className="input-form" name="email" id="email" />
-                <input type="password" className="input-form" name="password" id="password" />
-                <button>{this.props.action}</button>
-            </form>
+            <div class="form-container">
+                <form onSubmit={this.handleOnSubmit} className="form-style-column">
+                    <input type="text" className="form-input" name="email" id="email" />
+                    <input type="password" className="form-input" name="password" id="password" />
+                    <button className="btn-primary">{this.props.action}</button>
+                </form>
+            </div>  
         );
     }
 }

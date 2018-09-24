@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 class Header extends Component {
     render(){
         return (
             <header>
-                <h2>Cycle-Logger</h2>
+                <h2 id="logo">Cycle-Logger</h2>
                 <nav id="navbar">
                     <ul>
-                        <li><Link to={'/signin'}>Log in</Link></li>
-                        <li><Link to={'/signup'}>Sign up</Link></li>
+                        <li><NavLink to={'/signin'} activeClassName="is-active">Log in</NavLink></li>
+                        <li><NavLink to={'/signup'} activeClassName="is-active">Sign up</NavLink></li>
                         <li><a >Log out</a></li>
                     </ul>
                 </nav>

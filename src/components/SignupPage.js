@@ -23,13 +23,11 @@ class SignupPage extends Component {
     }
     render() {
       return (
-        <div className="Signup">
-         <div className="container">
-          <h1>Sign Up</h1>
+        <div className="signup">
+          <h1 className="page-title">Sign Up</h1>
           <AuthForm action='Sign Up' handleAuthorization={this.handleSignUp}/>
           <p>or</p>
           <Link to="/signin">Sign In</Link>
-         </div>
         </div>
       );
     }

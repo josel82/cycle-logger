@@ -1,0 +1,25 @@
+@import './settings.scss';
+
+.form-container{
+    display: inline-block;
+    width: 300px;
+}
+
+.form-style-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-input {
+    height: 1.5em;
+    padding: .5em;
+    margin-bottom: 1rem;
+}
+
+.btn-primary {
+    background-color: $primary;
+    color: $pearl;
+    text-transform: uppercase;
+    font-size: 1rem;
+    padding: 1em;
+}
