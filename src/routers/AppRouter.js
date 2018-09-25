@@ -6,6 +6,8 @@ import LoggerPage from '../components/LoggerPage';
 import NotFoundPage from '../components/NotFoundPage';
 import SignupPage from '../components/SignupPage';
 import SigninPage from '../components/SigninPage';
+import EntryModal from '../components/EntryModal';
+
 
 const AppRouter = () => (
     <BrowserRouter>
@@ -17,8 +19,10 @@ const AppRouter = () => (
                 <Route path="/signin" component={SigninPage} />
                 <Route component={NotFoundPage}/>
             </Switch>
+            <EntryModal />
         </div>
     </BrowserRouter>
 )
 
 export default AppRouter;
+

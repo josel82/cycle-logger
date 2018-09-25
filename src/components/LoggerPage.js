@@ -1,37 +1,51 @@
 import React, { Component } from 'react';
 import { auth } from '../firebase/firebase';
 import Entry from '../components/Entry';
+import configureStore from '../store/configureStore'
+import getVisibleEntries from '../selectors/entries';
+import {addEntry} from '../actions/entries';
+import EntryModal from '../components/EntryModal';
 
-const list = [
-  {
-    compound: 'deka',
-    quantity: 200,
-    timestamp: 344828226
-  },
-  {
-    compound: 'testosterone',
-    quantity: 200,
-    timestamp: 336455483
-  }
-]
+let list = []
+const store = configureStore();
+
+store.subscribe(()=>{
+  const state = store.getState();
+  const visibleExpenses = getVisibleEntries(state.expenses, state.filters); 
+  list = visibleExpenses;
+  console.log(store.getState());
+});
+
 
 class LoggerPage extends Component {
-    // constructor(props){
-    //   super(props);
-    //   this.handleOnSubmit = this.handleOnSubmit.bind(this);
-    // }
+    constructor(props){
+      super(props);
+      this.handleShowEntryModal = this.handleShowEntryModal.bind(this);
+      this.handleCloseEntryModal = this.handleCloseEntryModal.bind(this);
+      this.state = {
+        showEntryModal: undefined
+      }
+    }
     
     handleOnLogOut(){
       auth.signOut().catch((error)=>{
         console.log(error);
       });
     }
+
+    handleShowEntryModal(){
+      this.setState({showEntryModal: true});
+    }
+    handleCloseEntryModal(){
+      this.setState({showEntryModal: true});
+    }
     render() {
       return (
         <div className="logger">
           <aside className="sidebar">
             <ul>
-              <li><a href="/">add new entry</a></li>
+              <li><a onClick={this.handleShowEntryModal}>add new entry</a></li>
+              <li><a href="/">filter by</a></li>
             </ul>
           </aside>
          <div className="content">
@@ -53,6 +67,7 @@ class LoggerPage extends Component {
               </tbody>
             </table>
          </div>
+         <EntryModal showModal={this.state.showEntryModal} closeModal={this.handleCloseEntryModal}/>
         </div>
       );
     }
@@ -60,3 +75,5 @@ class LoggerPage extends Component {
   
   export default LoggerPage;
 
+  store.dispatch(addEntry({compound: 'deka', quantity: 200, timestamp: -23000}));
+  store.dispatch(addEntry({compound: 'testosterore', quantity: 250, timestamp: -1000}));
