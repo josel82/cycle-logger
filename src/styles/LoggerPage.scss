@@ -9,7 +9,29 @@
 .sidebar {
     background-color: $white;
     width: 250px;
-    order: 1
+    padding-top: 4.3rem;
+    order: 1;
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+
+        li {
+            display: block;
+            padding: 1em 0;
+            a {
+                text-decoration: none;
+                color: $font-color;
+                display: block;
+                font-weight: bold;
+            }
+        }
+        li:hover {
+            background-color: #ddd;
+        }
+    }
 }
 
 .content {
@@ -33,6 +55,9 @@
         text-align: left;
         background-color: $primary;
         color: $white;
+    }
+    tr:hover {
+        background-color: #ddd;
     }
 }
 

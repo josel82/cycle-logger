@@ -1,26 +1,17 @@
 import React, { Component } from 'react';
 import { auth } from '../firebase/firebase';
-import LoggerForm from '../components/LoggerForm';
-
-
-const Entry = (props) => (
-  <tr>
-    <td>{props.compound}</td>
-    <td>{props.quantity}</td>
-    <td>{props.date}</td>
-  </tr>
-);
+import Entry from '../components/Entry';
 
 const list = [
   {
     compound: 'deka',
     quantity: 200,
-    date: 344828226
+    timestamp: 344828226
   },
   {
     compound: 'testosterone',
     quantity: 200,
-    date: 336455483
+    timestamp: 336455483
   }
 ]
 
@@ -40,7 +31,7 @@ class LoggerPage extends Component {
         <div className="logger">
           <aside className="sidebar">
             <ul>
-              <li><a href="#">add new entry</a></li>
+              <li><a href="/">add new entry</a></li>
             </ul>
           </aside>
          <div className="content">
@@ -51,9 +42,14 @@ class LoggerPage extends Component {
                   <th>Quantity</th>
                   <th>Date</th>
                 </tr>
-                {list.map((entry, i) => (
-                  <Entry compound={entry.compound} quantity={entry.quantity} date={entry.date} key={i}/>
-                ))}
+                {
+                  list.length > 0 ? list.map((entry, i) => (
+                    <Entry 
+                      compound={entry.compound} 
+                      quantity={entry.quantity} 
+                      timestamp={entry.timestamp} key={i} />
+                  )) : <tr><td colSpan="3">No Items</td></tr> 
+                }
               </tbody>
             </table>
          </div>
