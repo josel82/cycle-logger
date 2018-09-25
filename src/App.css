@@ -76,11 +76,25 @@ header {
 .sidebar {
   background-color: #fff;
   width: 250px;
-  margin-right: 20px; }
+  order: 1; }
 
 .content {
-  margin: 0 auto;
-  text-align: center; }
+  margin: 4.3rem 20px 0;
+  flex: 1;
+  order: 2; }
+
+#entries {
+  border-collapse: collapse;
+  width: 100%; }
+  #entries td, #entries th {
+    border: 1px solid #ddd;
+    padding: 8px; }
+  #entries th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #656fcf;
+    color: #fff; }
 
 .signup {
   text-align: center;

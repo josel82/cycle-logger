@@ -9,11 +9,30 @@
 .sidebar {
     background-color: $white;
     width: 250px;
-    margin-right: 20px;
+    order: 1
 }
 
 .content {
-    margin: 0 auto;
-    text-align: center;
+    margin: 4.3rem 20px 0;
+    flex: 1;
+    order: 2;
+    // text-align: center;
+}
+
+// Table
+#entries{
+    border-collapse: collapse;
+    width: 100%;
+    td, th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+    th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: $primary;
+        color: $white;
+    }
 }
 
