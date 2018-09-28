@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import AppRouter from './routers/AppRouter';
-import './App.css';
+import './sass/App.scss';
 import './firebase/firebase';
 
 class App extends Component {

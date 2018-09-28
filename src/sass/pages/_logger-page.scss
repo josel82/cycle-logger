@@ -1,35 +1,35 @@
-@import './settings.scss';
-
-.logger {
+.logger-page {
     display: flex;
     flex-direction: row;
     height: 100vh;
 }
 
 .sidebar {
-    background-color: $white;
-    width: 250px;
+    background-color: $color-white;
+    width: 25rem;
     padding-top: 4.3rem;
     order: 1;
 
-    ul {
+    &__navigation {
         list-style: none;
         margin: 0;
         padding: 0;
         text-align: center;
 
-        li {
+        &__item {
             display: block;
-            padding: 1em 0;
+            padding: 1rem 0;
+
             a {
                 text-decoration: none;
-                color: $font-color;
+                color: $color-grey-dark;
                 display: block;
                 font-weight: bold;
             }
-        }
-        li:hover {
-             background-color: #ddd;
+
+            &:hover {
+                background-color: #ddd;
+            }
         }
     }
 }
@@ -59,4 +59,3 @@
         background-color: #ddd;
     }
 }
-

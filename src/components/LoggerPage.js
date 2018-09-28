@@ -37,19 +37,19 @@ class LoggerPage extends Component {
       this.setState({showEntryModal: true});
     }
     handleCloseEntryModal(){
-      this.setState({showEntryModal: true});
+      this.setState({showEntryModal: false});
     }
     render() {
       return (
-        <div className="logger">
+        <div className="logger-page">
           <aside className="sidebar">
-            <ul>
-              <li><a onClick={this.handleShowEntryModal}>add new entry</a></li>
-              <li><a href="/">filter by</a></li>
+            <ul className="sidebar__navigation">
+              <li className="sidebar__navigation__item"><a onClick={this.handleShowEntryModal}>add new entry</a></li>
+              <li className="sidebar__navigation__item"><a href="/">filter by</a></li>
             </ul>
           </aside>
-         <div className="content">
-            <table id="entries">
+         <div className="page-content">
+            <table className="output-table">
               <tbody>
                 <tr>
                   <th>Compound</th>
@@ -67,7 +67,10 @@ class LoggerPage extends Component {
               </tbody>
             </table>
          </div>
-         <EntryModal showModal={this.state.showEntryModal} closeModal={this.handleCloseEntryModal}/>
+         <EntryModal 
+            showModal={this.state.showEntryModal} 
+            closeModal={this.handleCloseEntryModal}
+          />
         </div>
       );
     }

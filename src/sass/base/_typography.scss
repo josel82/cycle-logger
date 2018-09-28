@@ -1,0 +1,34 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.6rem;
+}
+
+.header__logo{
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.4rem;
+    color: $primary;
+}
+
+.header__navigation {
+    ul {
+        li{
+            a{
+                &:link,
+                &:visited{
+                    text-decoration: none;
+                    color: $color-gray-dark;
+                    font-weight: bold;
+                }
+                &:hover {
+                    color: $color-primary;
+                }
+                &.is-active{
+                    color: $color-primary;
+                }
+            }
+        }
+    }
+}
