@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import AuthForm from './AuthForm';
 import { auth } from '../firebase/firebase';
 
@@ -23,12 +22,7 @@ class SignupPage extends Component {
     }
     render() {
       return (
-        <div className="signup">
-          <h1 className="page-title">Sign Up</h1>
           <AuthForm action='Sign Up' handleAuthorization={this.handleSignUp}/>
-          <p>or</p>
-          <Link to="/signin">Sign In</Link>
-        </div>
       );
     }
   }

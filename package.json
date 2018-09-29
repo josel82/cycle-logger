@@ -56,7 +56,10 @@
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "node-sass": "^4.9.3",
+    "sass-loader": "^7.1.0"
+  },
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,mjs}"

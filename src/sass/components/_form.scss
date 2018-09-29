@@ -1,23 +1,18 @@
-.form-container{
+
+.form-box{
     display: inline-block;
     width: 30rem;
 }
 
-.form-style-column {
+
+.form {
     display: flex;
     flex-direction: column;
-}
 
-.form-input {
-    height: 1.5rem;
-    padding: .5rem;
-    margin-bottom: 1rem;
-}
-
-.btn-primary {
-    background-color: $primary;
-    color: $pearl;
-    text-transform: uppercase;
-    font-size: 1rem;
-    padding: 1rem;
+    &__input {
+        border-radius: .5rem;
+        border: 1px solid $color-grey;
+        margin-bottom: 2rem;
+        padding:1rem;
+    }
 }

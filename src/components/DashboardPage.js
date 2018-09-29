@@ -17,7 +17,7 @@ store.subscribe(()=>{
 });
 
 
-class LoggerPage extends Component {
+class DashboardPage extends Component {
     constructor(props){
       super(props);
       this.handleShowEntryModal = this.handleShowEntryModal.bind(this);
@@ -41,7 +41,7 @@ class LoggerPage extends Component {
     }
     render() {
       return (
-        <div className="logger-page">
+        <div className="dashboard-page">
           <aside className="sidebar">
             <ul className="sidebar__navigation">
               <li className="sidebar__navigation__item"><a onClick={this.handleShowEntryModal}>add new entry</a></li>
@@ -76,7 +76,7 @@ class LoggerPage extends Component {
     }
   }
   
-  export default LoggerPage;
+  export default DashboardPage;
 
   store.dispatch(addEntry({compound: 'deka', quantity: 200, timestamp: -23000}));
   store.dispatch(addEntry({compound: 'testosterore', quantity: 250, timestamp: -1000}));
