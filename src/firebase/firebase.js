@@ -15,15 +15,18 @@ const config = {
 firebase.initializeApp(config);
 
 const database = firebase.database();
-const auth = firebase.auth();
 
-auth.onAuthStateChanged(function(user) {
-    if (user) {
-      alert('User is signed in');
-      console.log(user);
-    }else{
-        console.log('User either logged out or not authorized');
-    }
-});
+const EmailAuthProvider = firebase.auth.EmailAuthProvider();
 
-export { database, auth }
+// const auth = firebase.auth();
+
+// auth.onAuthStateChanged(function(user) {
+//     if (user) {
+//       alert('User is signed in');
+//       console.log(user);
+//     }else{
+//         console.log('User either logged out or not authorized');
+//     }
+// });
+
+export { firebase, EmailAuthProvider, database as default };

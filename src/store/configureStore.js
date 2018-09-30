@@ -8,7 +8,7 @@ const configureStore = () => {
 
     const store = createStore(
         combineReducers({
-            expenses: entriesReducer,
+            entries: entriesReducer,
             filters: filtersReducer,
         })
     );

@@ -1,20 +1,9 @@
 import React, { Component } from 'react';
-import { auth } from '../firebase/firebase';
+import {connect} from 'react-redux';
+
 import Entry from '../components/Entry';
-import configureStore from '../store/configureStore'
-import getVisibleEntries from '../selectors/entries';
-import {addEntry} from '../actions/entries';
 import EntryModal from '../components/EntryModal';
-
-let list = []
-const store = configureStore();
-
-store.subscribe(()=>{
-  const state = store.getState();
-  const visibleExpenses = getVisibleEntries(state.expenses, state.filters); 
-  list = visibleExpenses;
-  console.log(store.getState());
-});
+import getVisibleEntries from '../selectors/entries';
 
 
 class DashboardPage extends Component {
@@ -27,11 +16,11 @@ class DashboardPage extends Component {
       }
     }
     
-    handleOnLogOut(){
-      auth.signOut().catch((error)=>{
-        console.log(error);
-      });
-    }
+    // handleOnLogOut(){
+    //   auth.signOut().catch((error)=>{
+    //     console.log(error);
+    //   });
+    // }
 
     handleShowEntryModal(){
       this.setState({showEntryModal: true});
@@ -45,7 +34,12 @@ class DashboardPage extends Component {
           <aside className="sidebar">
             <ul className="sidebar__navigation">
               <li className="sidebar__navigation__item"><a onClick={this.handleShowEntryModal}>add new entry</a></li>
-              <li className="sidebar__navigation__item"><a href="/">filter by</a></li>
+              <li className="sidebar__navigation__item">
+                <div className="form-group">
+                  <input className="form-control" type="text" name="filter-by-name" placeholder="Filter by name..."/>
+                  <button className="btn"></button>
+                </div>
+              </li>
             </ul>
           </aside>
          <div className="page-content">
@@ -57,7 +51,7 @@ class DashboardPage extends Component {
                   <th>Date</th>
                 </tr>
                 {
-                  list.length > 0 ? list.map((entry, i) => (
+                  this.props.entries.length > 0 ? this.props.entries.map((entry, i) => (
                     <Entry 
                       compound={entry.compound} 
                       quantity={entry.quantity} 
@@ -75,8 +69,15 @@ class DashboardPage extends Component {
       );
     }
   }
-  
-  export default DashboardPage;
 
-  store.dispatch(addEntry({compound: 'deka', quantity: 200, timestamp: -23000}));
-  store.dispatch(addEntry({compound: 'testosterore', quantity: 250, timestamp: -1000}));
+  const mapStateToProps = (state) => {
+    
+    const visibleEntries = getVisibleEntries(state.entries, state.filters);
+    return {
+      entries: visibleEntries
+    }
+  } 
+  
+  export default connect(mapStateToProps)(DashboardPage);
+
+

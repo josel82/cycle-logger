@@ -5,7 +5,7 @@ import Header from '../components/Header';
 import DashboardPage from '../components/DashboardPage';
 import NotFoundPage from '../components/NotFoundPage';
 import SignupPage from '../components/SignupPage';
-import SigninPage from '../components/SigninPage';
+import LoginPage from '../components/LoginPage';
 import EntryModal from '../components/EntryModal';
 
 
@@ -16,7 +16,7 @@ const AppRouter = () => (
             <Switch>
                 <Route path="/dashboard" component={DashboardPage} exact={true} />
                 <Route path="/signup" component={SignupPage} />
-                <Route path="/" component={SigninPage} />
+                <Route path="/" component={LoginPage} />
                 <Route component={NotFoundPage}/>
             </Switch>
             <EntryModal />
