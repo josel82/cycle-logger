@@ -24,12 +24,12 @@
             a {
                 display: block;
                 text-decoration: none;
-                color: $color-text-gray;
+                color: $color-text-grey;
                 font-weight: bold;
-            }
-
-            &:hover {
-                background-color: #ddd;
+                &:hover {
+                    color: #ddd;
+                    cursor: pointer;
+                }
             }
         }
     }

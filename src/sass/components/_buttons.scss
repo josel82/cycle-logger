@@ -7,4 +7,18 @@
 .btn {
     height: 5rem;
     text-transform: uppercase;
+
+    &:hover{
+        cursor: pointer;
+    }
+
+    &--plain{
+        &:hover{
+            background-color: $color-grey;
+        }
+
+        &:active {
+            background-color: $color-darker-grey;
+        }
+    }
 }
