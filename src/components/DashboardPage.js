@@ -4,9 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
 
-import Entry from '../components/Entry';
 import EntryModal from '../components/EntryModal';
-import getVisibleEntries from '../selectors/entries';
+import DashboardTable from './DashboardTable';
 import { setTextFilter } from '../actions/filters';
 
 
@@ -30,7 +29,6 @@ class DashboardPage extends Component {
     
       switch(e.target.name){
         case 'filter-by-name':
-          console.log(this.refs.filterByNameInput.value);
           this.props.dispatch(setTextFilter(this.refs.filterByNameInput.value));    
           break;
         default:
@@ -62,23 +60,7 @@ class DashboardPage extends Component {
             </ul>
           </aside>
          <div className="page-content">
-            <table className="output-table">
-              <tbody>
-                <tr>
-                  <th>Compound</th>
-                  <th>Quantity</th>
-                  <th>Date</th>
-                </tr>
-                {
-                  this.props.entries.length > 0 ? this.props.entries.map((entry, i) => (
-                    <Entry 
-                      compound={entry.compound} 
-                      quantity={entry.quantity} 
-                      timestamp={entry.timestamp} key={i} />
-                  )) : <tr><td colSpan="3">No Items</td></tr> 
-                }
-              </tbody>
-            </table>
+            <DashboardTable />
          </div>
          <EntryModal 
             showModal={this.state.showEntryModal} 
@@ -88,15 +70,7 @@ class DashboardPage extends Component {
       );
     }
   }
-
-  const mapStateToProps = (state) => {
-    
-    const visibleEntries = getVisibleEntries(state.entries, state.filters);
-    return {
-      entries: visibleEntries
-    }
-  } 
   
-  export default connect(mapStateToProps)(DashboardPage);
+  export default connect()(DashboardPage);
 
 

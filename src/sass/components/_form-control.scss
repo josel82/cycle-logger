@@ -12,6 +12,7 @@
     }
     &__control {
         border: .1rem solid $color-grey;
+        border-left: none;
         border-radius: 0 .5rem .5rem 0;
         padding:1rem;
     }
@@ -25,6 +26,7 @@
         border-right: none;
         padding: 1rem;
         border-radius: .5rem 0 0 .5rem;
+        color: $color-text-grey;
     }
 }
 
