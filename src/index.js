@@ -15,8 +15,8 @@ import { addEntry } from './actions/entries';
 const store = configureStore();
 
 
-store.dispatch(addEntry({compound: 'deka', quantity: 200, timestamp: -23000}));
-store.dispatch(addEntry({compound: 'testosterore', quantity: 250, timestamp: -1000}));
+store.dispatch(addEntry({compound: 'deka', quantity: 2000, timestamp: -2344222000}));
+store.dispatch(addEntry({compound: 'testosterore', quantity: 250, timestamp: 55633334000}));
 
 
 
