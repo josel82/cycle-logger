@@ -9,7 +9,7 @@ const entriesReducer = (state = entriesReducerDefaultState, action) => {
                 ...state,
                 action.entry
             ];
-        case 'REMOVE_ENTRY':
+        case 'REMOVE_ENTRY':        
             return state.filter(({id})=> id !== action.id);
         case 'EDIT_ENTRY':            
             return state.map((entry)=>{

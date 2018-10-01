@@ -2,11 +2,17 @@
 .btn-primary {
     background-color: $color-primary;
     color: $color-white-shade; 
+    height: 5rem;
+    text-transform: uppercase;
+}
+
+.btn-table {
+    border-radius: .3rem;
+    padding: .5rem;
 }
 
 .btn {
-    height: 5rem;
-    text-transform: uppercase;
+    
 
     &:hover{
         cursor: pointer;
@@ -22,3 +28,4 @@
         }
     }
 }
+

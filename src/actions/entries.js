@@ -20,8 +20,8 @@ export const addEntry = (
 
 //REMOVE_ENTRY
 
-export const removeEntry = ({id} = {}) => ({
-    type: 'REMOVE_EXPENSE',
+export const removeEntry = (id) => ({
+    type: 'REMOVE_ENTRY',
     id
 });
 

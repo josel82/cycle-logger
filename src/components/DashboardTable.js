@@ -6,21 +6,23 @@ import getVisibleEntries from '../selectors/entries';
 
 
 const DashboardTable = (props) => (
-    <table className="output-table">
+    <table className="table">
         <tbody>
             <tr>
             <th>Compound</th>
             <th>Quantity</th>
             <th>Date</th>
             </tr>
-            {
-            props.entries.length > 0 ? props.entries.map((entry, i) => (
-                <Entry 
-                compound={entry.compound} 
-                quantity={entry.quantity} 
-                timestamp={entry.timestamp} key={i} />
-            )) : <tr><td colSpan="3">No Items</td></tr> 
-            }
+                {
+                    props.entries.length > 0 ? props.entries.map((entry, i) => (
+                        <Entry 
+                            id = {entry.id}
+                            compound={entry.compound} 
+                            quantity={entry.quantity} 
+                            timestamp={entry.timestamp} key={i} 
+                            />
+                    )) : <tr><td colSpan="3">No Items</td></tr> 
+                }
         </tbody>
     </table>
 );

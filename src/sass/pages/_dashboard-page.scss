@@ -41,7 +41,7 @@
     order: 2;
 }
 
-.output-table{
+.table{
     border-collapse: collapse;
     width: 100%;
     td, th {
@@ -57,5 +57,11 @@
     }
     tr:hover {
         background-color: $color-grey;
+    }
+    td:last-child{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
     }
 }
