@@ -3,17 +3,13 @@ import React, { Component } from 'react';
 class EntryForm extends Component {
     constructor(props){
         super(props);
-        this.state = {
-            compound: '',
-            quantity: '',
-            timestamp: ''
-        }
+        this.state = this.props.entry ? this.props.entry : {compound:'', quantity: '', timestamp:''};    
         this.onCompoundChange = this.onCompoundChange.bind(this);
         this.onQuantityChange = this.onQuantityChange.bind(this);
         this.onDateChange = this.onDateChange.bind(this);
         this.handleOnSubmit = this.handleOnSubmit.bind(this);
     }
-    
+
     onCompoundChange(e){
         const compound = e.target.value;
         this.setState({compound});
@@ -28,7 +24,7 @@ class EntryForm extends Component {
     }
     handleOnSubmit(e){
         e.preventDefault();
-        this.props.onAddEntry(this.state);
+        this.props.onFormSubmit(this.state);
     }
     render(){
         return (

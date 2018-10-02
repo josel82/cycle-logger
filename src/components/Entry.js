@@ -2,12 +2,15 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { removeEntry } from '../actions/entries';
+import { selectEntry } from '../actions/entries';
 
 
 const Entry = ({dispatch, id, compound, quantity, timestamp}) => {
     const date = new Date(timestamp).toLocaleDateString();
     return (
-      <tr>
+      <tr onClick={()=>{
+        dispatch(selectEntry(id));
+      }}>
         <td><p>{compound}</p></td>
         <td><p>{quantity}</p></td>
         <td>

@@ -4,6 +4,7 @@ import { Route } from 'react-router-dom';
 import DashboardTable from './DashboardTable';
 import AddEntry from './AddEntry';
 import Sidebar from './Sidebar';
+import EditEntry from './EditEntry';
 
 
 const DashboardPage = () => (
@@ -12,6 +13,7 @@ const DashboardPage = () => (
     <div className="page-content">
       <Route path="/dashboard" component={DashboardTable} exact={true} />
       <Route path="/dashboard/add" component={AddEntry} />
+      <Route path="/dashboard/edit" component={EditEntry} />
     </div>
  </div>
 );

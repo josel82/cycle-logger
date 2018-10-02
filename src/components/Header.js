@@ -5,7 +5,8 @@ class Header extends Component {
     constructor(props){
         super(props);
         this.getNavigationLink = this.getNavigationLink.bind(this);
-        this.state = {loggedIn:true};
+        this.onLogout = this.onLogout.bind(this);
+        this.state = {loggedIn:false};
     }
     getNavigationLink(){
         const {pathname} = this.props.location;
@@ -17,6 +18,11 @@ class Header extends Component {
         }
         return;
     }
+    onLogout(e){
+        e.preventDefault();
+        this.setState({loggedIn:false})
+        this.props.history.push('/');
+    }
     render(){
         return (
             <header className="header">
@@ -24,7 +30,7 @@ class Header extends Component {
                 <nav className="header__navigation">
                     <ul> 
                         {this.getNavigationLink()}   
-                        {this.state.loggedIn && <li><a >Log out</a></li>}
+                        {this.state.loggedIn && <li><a onClick={this.onLogout}>Log out</a></li>}
                     </ul>
                 </nav>
             </header>

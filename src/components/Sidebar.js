@@ -27,7 +27,10 @@ const Sidebar = (props) => (
             </div>
             </li>
             <li className="sidebar__navigation__item">
-                <NavLink to='/dashboard/add'>add new entry</NavLink>
+                <NavLink to='/dashboard/add'>Add new entry</NavLink>
+            </li>
+            <li className="sidebar__navigation__item">
+                <NavLink to='/dashboard/edit'>Edit entry</NavLink>
             </li>
         </ul>
     </aside>

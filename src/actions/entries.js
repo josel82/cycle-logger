@@ -25,9 +25,16 @@ export const removeEntry = (id) => ({
     id
 });
 
-//EDIT_EXPENSE
+//EDIT_ENTRY
 export const editEntry = (id, updates) => ({
     type: 'EDIT_ENTRY',
     id,
     updates
+});
+
+//SELECT_ENTRY
+
+export const selectEntry = (id) => ({
+    type: 'SELECT_ENTRY',
+    id
 });
