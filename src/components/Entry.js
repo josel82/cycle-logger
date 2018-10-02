@@ -8,10 +8,10 @@ const Entry = ({dispatch, id, compound, quantity, timestamp}) => {
     const date = new Date(timestamp).toLocaleDateString();
     return (
       <tr>
-        <td>{compound}</td>
-        <td>{quantity}</td>
+        <td><p>{compound}</p></td>
+        <td><p>{quantity}</p></td>
         <td>
-          {date}
+          <p>{date}</p>
           <button 
             className="btn btn-table"
             onClick={()=>{    

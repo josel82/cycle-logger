@@ -35,7 +35,7 @@ const DashboardTable = (props) => (
                             quantity={entry.quantity} 
                             timestamp={entry.timestamp} key={i} 
                             />
-                    )) : <tr><td colSpan="3">No Items</td></tr> 
+                    )) : <tr><td colSpan="3" className="table__cell--spread">No Items</td></tr> 
                 }
         </tbody>
     </table>

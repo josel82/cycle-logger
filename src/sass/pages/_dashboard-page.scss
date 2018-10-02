@@ -44,6 +44,9 @@
 .table{
     border-collapse: collapse;
     width: 100%;
+    tr:hover {
+        background-color: $color-grey;
+    }
     td, th {
         border: .1rem solid $color-grey;
         padding: .8rem;
@@ -59,13 +62,13 @@
             float: right;
         }
     }
-    tr:hover {
-        background-color: $color-grey;
+    td {
+        p {
+            display: inline-block;
+            padding: .5em 0;
+        } 
     }
-    td:last-child{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
+    &__cell--spread {
+        text-align: center;
     }
 }
