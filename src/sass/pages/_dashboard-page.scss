@@ -15,12 +15,11 @@
         list-style: none;
         margin: 0;
         padding: 0;
-        text-align: center;
 
         &__item {
             display: block;
-            padding-bottom: 1rem;
-
+            margin-bottom: 2rem;
+            font-size: 2rem;
             a {
                 display: block;
                 text-decoration: none;
