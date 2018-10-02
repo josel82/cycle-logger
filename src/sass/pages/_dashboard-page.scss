@@ -54,6 +54,10 @@
         background-color: $color-primary;
         text-align: left;
         color: $color-white;
+
+        .fa-angle-down{
+            float: right;
+        }
     }
     tr:hover {
         background-color: $color-grey;
