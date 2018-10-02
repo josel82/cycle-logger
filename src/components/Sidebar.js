@@ -12,9 +12,6 @@ const Sidebar = (props) => (
         <ul className="sidebar__navigation">
             <li className="sidebar__navigation__item">
             <div className="form-group">
-                <div className="form-group__icon"> 
-                <FontAwesomeIcon icon={faSearch} />
-                </div>
                 <input 
                     className="form-group__control" 
                     type="text" 
@@ -24,6 +21,9 @@ const Sidebar = (props) => (
                         props.dispatch(setTextFilter(e.target.value));
                     }} 
                     />
+                <div className="form-group__icon"> 
+                    <FontAwesomeIcon icon={faSearch} />
+                </div>
             </div>
             </li>
             <li className="sidebar__navigation__item">

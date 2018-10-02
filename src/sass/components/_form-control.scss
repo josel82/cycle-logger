@@ -3,18 +3,20 @@
 .form-group{
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
+    border: .1rem solid $color-grey;
+    border-radius: .5rem;
+    padding: 1rem;
+    font-size: 2rem;
 
     &__control,
     &__icon {
         display: inline-block;
-        
     }
     &__control {
-        border: .1rem solid $color-grey;
-        border-left: none;
-        border-radius: 0 .5rem .5rem 0;
-        padding:1rem;
+        border: none;
+        font-size: 2rem;
+        width: 75%;
     }
     &__btn {
         background-color: $color-off-white;
@@ -22,10 +24,7 @@
         padding:1rem;
     }
     &__icon {
-        border: .1rem solid $color-grey;
-        border-right: none;
-        padding: 1rem;
-        border-radius: .5rem 0 0 .5rem;
+        border: none;
         color: $color-text-grey;
     }
 }
