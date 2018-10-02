@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
@@ -9,9 +10,6 @@ import { setTextFilter } from '../actions/filters';
 const Sidebar = (props) => (
     <aside className="sidebar">
         <ul className="sidebar__navigation">
-            <li className="sidebar__navigation__item">
-                <a onClick={()=>{return;}}>add new entry</a>
-            </li>
             <li className="sidebar__navigation__item">
             <div className="form-group">
                 <div className="form-group__icon"> 
@@ -27,6 +25,9 @@ const Sidebar = (props) => (
                     }} 
                     />
             </div>
+            </li>
+            <li className="sidebar__navigation__item">
+                <NavLink to='/dashboard/add'>add new entry</NavLink>
             </li>
         </ul>
     </aside>
