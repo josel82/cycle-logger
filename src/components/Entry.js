@@ -4,12 +4,23 @@ import { connect } from 'react-redux';
 import { removeEntry } from '../actions/entries';
 import { selectEntry } from '../actions/entries';
 
+const onSelectedRow = (e)=> {
+  const row = e.currentTarget;
+        const table = row.parentNode;
+        row.className = 'selected-row';
+        table.childNodes.forEach((item)=>{
+          if(item !== row){
+            item.className = '';
+        }
+  });
+}
 
 const Entry = ({dispatch, id, compound, quantity, timestamp}) => {
     const date = new Date(timestamp).toLocaleDateString();
     return (
-      <tr onClick={()=>{
-        dispatch(selectEntry(id));
+      <tr onClick={(e)=>{
+        onSelectedRow(e);
+        dispatch(selectEntry(id));     
       }}>
         <td><p>{compound}</p></td>
         <td><p>{quantity}</p></td>

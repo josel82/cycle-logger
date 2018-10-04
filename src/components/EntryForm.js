@@ -36,6 +36,7 @@ class EntryForm extends Component {
                     value={this.state.compound} 
                     onChange={this.onCompoundChange}
                     placeholder="Compound..."
+                    autoFocus
                     />
                 <input 
                     type="text" 
