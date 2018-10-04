@@ -18,7 +18,7 @@ const DashboardTable = (props) => (
                     onClick={()=>{
                         props.dispatch(sortByQuantity());  
                     }}>
-                    Quantity {props.filters.sortBy === 'quantity' && <FontAwesomeIcon icon={faAngleDown}/>}
+                    Quantity (mg) {props.filters.sortBy === 'quantity' && <FontAwesomeIcon icon={faAngleDown}/>}
                 </th>
                 <th 
                     onClick={()=>{

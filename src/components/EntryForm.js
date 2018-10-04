@@ -16,7 +16,9 @@ class EntryForm extends Component {
     }
     onQuantityChange(e){
         const quantity = e.target.value;
-        this.setState({quantity});
+        if(quantity.match(/^\d*$/)){
+            this.setState({quantity});
+        }
     }
     onDateChange(e){
         const timestamp = e.target.value;
