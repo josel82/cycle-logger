@@ -4,6 +4,7 @@
 body {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.6rem;
+    color: $color-text-grey;
 }
 
 
@@ -29,6 +30,20 @@ body {
                 &.is-active{
                     color: $color-primary;
                 }
+            }
+        }
+    }
+}
+
+.sidebar{
+    &__navigation__item{
+        a{
+            &:link,
+            &:visited{
+                color: $color-text-grey
+            }
+            &:hover{
+                color: #ddd;
             }
         }
     }

@@ -8,10 +8,11 @@
 @import './components/buttons';
 @import './components/form';
 @import './components/form-control';
+@import './components/react-dates-overrrides';
 
 @import './layout/header';
 @import './layout/auth-form';
-@import './layout/add-entry-from';
+@import './layout/entry-from';
 
 @import './pages/dashboard-page';
 

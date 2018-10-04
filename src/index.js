@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { firebase } from './firebase/firebase';
-
+import moment from 'moment';
+import 'react-dates/initialize';
 import './sass/App.scss';
 import './index.css';
 
@@ -15,8 +16,8 @@ import { addEntry } from './actions/entries';
 const store = configureStore();
 
 
-store.dispatch(addEntry({compound: 'deka', quantity: 2000, timestamp: -2344222000}));
-store.dispatch(addEntry({compound: 'testosterore', quantity: 250, timestamp: 55633334000}));
+store.dispatch(addEntry({compound: 'deka', quantity: 2000, timestamp: moment('2017-07-02') }));
+store.dispatch(addEntry({compound: 'testosterore', quantity: 250, timestamp: moment('2017-10-20')}));
 
 
 

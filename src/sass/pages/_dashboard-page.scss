@@ -23,10 +23,9 @@
             a {
                 display: block;
                 text-decoration: none;
-                color: $color-text-grey;
                 font-weight: bold;
+                
                 &:hover {
-                    color: #ddd;
                     cursor: pointer;
                 }
             }

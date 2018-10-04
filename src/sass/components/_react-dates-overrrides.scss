@@ -1,0 +1,15 @@
+// NOTE: the order of these styles DO matter
+
+// Will edit everything selected including everything between a range of dates
+.CalendarDay__selected_span {
+    background: $color-primary; //background
+    color: white; //text
+    // border: 1px solid $light-red; //default styles include a border
+  }
+  
+  // Will edit selected date or the endpoints of a range of dates
+  .CalendarDay__selected {
+    background: $color-primary;
+    color: white;
+  }
+  

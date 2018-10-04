@@ -1,33 +1,69 @@
 
+
+.btn {   
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+//*********************   Button Styles   *************************
 .btn-primary {
+
     background-color: $color-primary;
-    font-size: 2rem;
     color: $color-white-shade; 
+
+    &:hover{
+        background-color: $color-primary-dark;
+    }
+    &:active {
+        background-color: $color-primary-darker;
+    }
+}
+
+.btn-default{
+
+    color:$color-text-grey;
+
+    &:hover{
+        background-color: $color-grey;
+    }
+    &:active {
+        background-color: $color-darker-grey;
+    }
+}
+
+.btn-primary,
+.btn-default {
+    border: none;
+}
+
+//*********************   Button Sizes   *************************
+
+.btn-md{
+    font-size: 2rem;
     height: 5rem;
     text-transform: uppercase;
 }
 
+//*********************   Button Layouts   *************************
+.btn-inline-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    .btn-primary,
+    .btn-default {
+        display: inline-block;
+        width: 100%;
+    }
+}
+
+//*********************   Button types   *************************
 .btn-table {
     border-radius: .3rem;
     padding: .5rem;
     float: right;
 }
 
-.btn {
-    
 
-    &:hover{
-        cursor: pointer;
-    }
-
-    &--plain{
-        &:hover{
-            background-color: $color-grey;
-        }
-
-        &:active {
-            background-color: $color-darker-grey;
-        }
-    }
-}
 
