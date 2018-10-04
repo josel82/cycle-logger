@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import moment from 'moment';
 import { SingleDatePicker } from 'react-dates';
 import 'react-dates/lib/css/_datepicker.css';
+
+import { clearSelectedEntry } from '../actions/entries';
 
 class EntryForm extends Component {
     constructor(props){
@@ -34,6 +37,7 @@ class EntryForm extends Component {
     }
     onNavigateBack(e){
         e.preventDefault();
+        this.props.dispatch(clearSelectedEntry());
         this.props.history.push('/dashboard');
     }
     handleOnSubmit(e){
@@ -77,5 +81,6 @@ class EntryForm extends Component {
     }
 }
 
+const EntryFromWithRouter = withRouter(EntryForm);
 
-export default withRouter(EntryForm);
+export default connect()(EntryFromWithRouter);

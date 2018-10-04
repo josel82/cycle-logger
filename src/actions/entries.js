@@ -38,3 +38,7 @@ export const selectEntry = (id) => ({
     type: 'SELECT_ENTRY',
     id
 });
+
+export const clearSelectedEntry = () => ({
+    type: 'CLEAR_SELECTED'
+});

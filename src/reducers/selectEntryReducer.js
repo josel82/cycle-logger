@@ -7,6 +7,8 @@ const selectEntryReducer = (state = selectEntryReducerDefaultState, action) => {
             return {
                id: action.id
             }
+        case 'CLEAR_SELECTED':
+            return {}
         default:
             return state;
     }
