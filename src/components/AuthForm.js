@@ -24,7 +24,7 @@ class AuthForm extends Component {
                     <form onSubmit={this.handleOnSubmit} className="form form-auth">
                         <input type="text" className="form__input" name="email" id="email" />
                         <input type="password" className="form__input" name="password" id="password" />
-                        <button className="btn btn-primary">{this.props.action}</button>
+                        <button className="btn btn-primary btn-md">{this.props.action}</button>
                     </form>
                 </div>
             </div>  

@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import AuthForm from './AuthForm';
 import { connect } from 'react-redux';
-import { startLogin } from '../actions/auth';
-// import { auth } from '../firebase/firebase';
+// import { startLogin } from '../actions/auth';
 
 class LoginPage extends Component {
 
@@ -26,14 +25,17 @@ class LoginPage extends Component {
     // }
     render(){
         return (
-            <AuthForm action='Sign In' handleAuthorization={this.props.startLogin}/>
+            <React.Fragment>
+                <AuthForm action='Sign In' handleAuthorization={()=>{return;}}/>
+                <button onClick={()=>{return;}} className="btn btn-primary btn-md google-login">Login</button>
+            </React.Fragment>
         )
     }
 }
 
-const mapDispatchToProps = (dispatch) => ({
-    startLogin: () => dispatch(startLogin())
-});
+// const mapDispatchToProps = (dispatch) => ({
+//     startLogin: () => dispatch(startLogin())
+// });
 
-export default connect(undefined, mapDispatchToProps)(LoginPage);
+export default connect(undefined)(LoginPage);
 

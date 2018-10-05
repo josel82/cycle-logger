@@ -1,22 +1,48 @@
-import uuid from 'uuid';
+import database from '../firebase/firebase';
 
 //ADD_ENTRY
 
-export const addEntry = (
-    { 
-        compound ='',  
-        quantity = 0, 
-        timestamp = 0 
-    } = {}
-) => ({
+export const addEntry = (entry) => ({
     type: 'ADD_ENTRY',
-    entry: {
-        id: uuid(),
-        compound,
-        quantity,
-        timestamp 
+    entry
+});
+
+export const startAddEntry = (entryData = {}) => {
+    
+    return (dispatch) => {
+
+        const {
+            compound = '',  
+            quantity = 0, 
+            timestamp = 0
+        } = entryData;
+        
+        const entry = { compound, quantity, timestamp };
+
+        database.ref('Entries').push(entry).then((ref)=>{
+            dispatch(addEntry({
+                id:ref.key,
+                ...entry
+            }));
+        });
+    };
+};
+
+export const startEditEntry = (id, entryData ) => {
+    return (dispatch) => {
+        const {
+            compound,  
+            quantity, 
+            timestamp
+        } = entryData;
+        
+        const entry = { compound, quantity, timestamp };
+
+        database.ref(`Entries/${id}`).update(entry, ()=>{
+            dispatch(editEntry(id, entry));
+        });
     }
-})
+}
 
 //REMOVE_ENTRY
 

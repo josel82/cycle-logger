@@ -18,8 +18,9 @@
 
         &__item {
             display: block;
-            margin-bottom: 2rem;
+            padding: 1rem 0;
             font-size: 2rem;
+
             a {
                 display: block;
                 text-decoration: none;
@@ -30,7 +31,14 @@
                 }
             }
         }
+        &__item:first-child{
+            padding-top: 0;
+        }
     }
+}
+
+.active{
+    border-bottom: 2px solid $color-primary;
 }
 
 .page-content {

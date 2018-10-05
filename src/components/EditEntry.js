@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
 
-import { editEntry } from '../actions/entries'
+import { startEditEntry } from '../actions/entries'
 import EntryForm from './EntryForm';
 
 class EditEntry extends Component {
 
     onEditEntry = (updates) =>{
         const id = this.props.id;                
-        this.props.dispatch(editEntry(id, updates));
+        this.props.startEditEntry(id, updates);
         this.props.history.push('/dashboard');
     }
     render(){
@@ -24,6 +23,9 @@ const mapStateToProps = (state) =>({
     id: state.selected.id
 });
 
-const EditEntryWithRouter = withRouter(EditEntry);
+const mapDispatchToProps = (dispatch) => ({
+        startEditEntry: (id, entry) => dispatch(startEditEntry(id,entry))
+});
 
-export default connect(mapStateToProps)(EditEntryWithRouter);
+
+export default connect(mapStateToProps, mapDispatchToProps)(EditEntry);

@@ -17,6 +17,8 @@ class Sidebar extends Component {
         }
     }
 
+    isActive = (path, match, location) => !!(match || path === location.pathname);
+
     render(){
         return(
             <aside className="sidebar">
@@ -38,10 +40,19 @@ class Sidebar extends Component {
                     </div>
                     </li>
                     <li className="sidebar__navigation__item">
-                        <NavLink to='/dashboard/add'>Add new entry</NavLink>
+                        <NavLink 
+                            to='/dashboard/add'
+                            activeClassName="active"
+                            exact={true} 
+                            >Add new entry</NavLink>
                     </li>
                     <li className="sidebar__navigation__item">
-                        <NavLink onClick={this.onEditEntry} to='/dashboard/edit'>Edit entry</NavLink>
+                        <NavLink 
+                            onClick={this.onEditEntry} 
+                            to='/dashboard/edit'
+                            activeClassName="active"
+                            exact={true}  
+                            >Edit entry</NavLink>
                     </li>
                 </ul>
             </aside>

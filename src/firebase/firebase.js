@@ -16,17 +16,54 @@ firebase.initializeApp(config);
 
 const database = firebase.database();
 
-const EmailAuthProvider = firebase.auth.EmailAuthProvider();
+export { firebase, database as default };
 
-// const auth = firebase.auth();
 
-// auth.onAuthStateChanged(function(user) {
-//     if (user) {
-//       alert('User is signed in');
-//       console.log(user);
-//     }else{
-//         console.log('User either logged out or not authorized');
-//     }
+// //child_removed
+// database.ref().on('child_removed', (snapshot)=>{
+//     console.log(snapshot.key, snapshot.val());
 // });
 
-export { firebase, EmailAuthProvider, database as default };
+// //child_changed
+// database.ref().on('child_changed', (snapshot)=>{
+//     console.log(snapshot.key, snapshot.val());
+// });
+
+// //child_added
+// database.ref().on('child_added', (snapshot)=>{
+//     console.log(snapshot.key, snapshot.val());
+// });
+
+// // database.ref('Entries')
+// //             .on('value', (snapshot)=>{
+// //                 const entries = [];
+
+// //                 snapshot.forEach((childSnapshot)=>{
+// //                     entries.push({
+// //                         id: childSnapshot.key,
+// //                         ...childSnapshot.val()
+// //                 });
+// //                 console.log(entries);
+// //             });
+// // });
+
+// // const date = moment('2018-09-02').format();
+// // database.ref('Entries').push({compound: 'Testoterone', quantity: 500, timestamp: date  }).then(()=>{}).catch((e)=>{
+// //     console.log(e);
+    
+// // })
+
+// // const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
+
+// // const auth = firebase.auth();
+
+// // auth.onAuthStateChanged(function(user) {
+// //     if (user) {
+// //       alert('User is signed in');
+// //       console.log(user);
+// //     }else{
+// //         console.log('User either logged out or not authorized');
+// //     }
+// // });
+
+
