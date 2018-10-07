@@ -8,8 +8,11 @@
   }
   
   // Will edit selected date or the endpoints of a range of dates
-  .CalendarDay__selected {
+.CalendarDay__selected {
     background: $color-primary;
     color: white;
-  }
-  
+}
+
+.DateInput_input{
+    font-size: 2rem;
+}

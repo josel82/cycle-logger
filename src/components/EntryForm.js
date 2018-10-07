@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { faTrashAlt } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import moment from 'moment';
 import { SingleDatePicker } from 'react-dates';
 import 'react-dates/lib/css/_datepicker.css';
@@ -92,9 +94,10 @@ class EntryForm extends Component {
                             className="btn btn-default btn-delete"
                             onClick={(e)=>{ 
                                 e.preventDefault();
-                                this.props.onRemoveEntry(this.props.entry.id);
+                                this.props.onRemoveEntry(this.props.match.params.id);
                             }}
                             >
+                            <FontAwesomeIcon icon={faTrashAlt}/>   
                             Delete
                         </button> 
                     }

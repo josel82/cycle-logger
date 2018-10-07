@@ -55,9 +55,6 @@
         &:hover {
             background-color: $color-grey;
         }
-        &.selected-row{
-            background-color: $color-darker-grey;
-        }
     }
     td, th {
         border: .1rem solid $color-grey;

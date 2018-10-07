@@ -6,8 +6,12 @@
 
 
 .form {
-    display: flex;
-    flex-direction: column;
+    // display: flex;
+    // flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 5rem 5rem 15rem 5rem;
+    align-items: start; 
 
     &__input {
         border-radius: .5rem;
