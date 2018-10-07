@@ -3,7 +3,6 @@ import thunk from 'redux-thunk';
 
 import entriesReducer from '../reducers/entriesReducer';
 import filtersReducer from '../reducers/filtersReducer';
-import selectEntryReducer from '../reducers/selectEntryReducer';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose; //Redux devtools functionalities
 
@@ -13,7 +12,6 @@ const configureStore = () => {
         combineReducers({
             entries: entriesReducer,
             filters: filtersReducer,
-            selected: selectEntryReducer
         }),
         composeEnhancers(applyMiddleware(thunk))
     );

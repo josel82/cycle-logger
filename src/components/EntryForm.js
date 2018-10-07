@@ -4,8 +4,6 @@ import moment from 'moment';
 import { SingleDatePicker } from 'react-dates';
 import 'react-dates/lib/css/_datepicker.css';
 
-import { clearSelectedEntry } from '../actions/entries';
-
 class EntryForm extends Component {
     constructor(props){
         super(props);
@@ -16,38 +14,31 @@ class EntryForm extends Component {
             calendarFocused:false, 
             error:''
         };    
-        this.onCompoundChange = this.onCompoundChange.bind(this);
-        this.onQuantityChange = this.onQuantityChange.bind(this);
-        this.onDateChange = this.onDateChange.bind(this);
-        this.onFocusChange = this.onFocusChange.bind(this);
-        this.onNavigateBack = this.onNavigateBack.bind(this);
-        this.handleOnSubmit = this.handleOnSubmit.bind(this);
     }
 
-    onCompoundChange(e){
+    onCompoundChange = (e) => {
         const compound = e.target.value;
         this.setState(()=>({compound}));
     }
-    onQuantityChange(e){
+    onQuantityChange = (e) => {
         const quantity = e.target.value;
         if(quantity.match(/^\d*$/)){
             this.setState(()=>({quantity}));
         }
     }
-    onDateChange(timestamp){        
+    onDateChange = (timestamp) => {        
         if(timestamp){
             this.setState(()=>({timestamp}));
         }
     }
-    onFocusChange({focused}){
+    onFocusChange = ({focused}) => {
         this.setState(()=>({calendarFocused:focused}))
     }
-    onNavigateBack(e){
+    onNavigateBack = (e) => {
         e.preventDefault();
-        this.props.dispatch(clearSelectedEntry());
         this.props.history.push('/dashboard');
     }
-    handleOnSubmit(e){
+    handleOnSubmit = (e) => {
         e.preventDefault();
         const { compound, quantity } = this.state;
         if(!compound || !quantity ){
