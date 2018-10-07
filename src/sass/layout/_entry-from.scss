@@ -1,4 +1,9 @@
 .entry-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 5rem 5rem 15rem 5rem;
+    align-items: start; 
+    
     .form-input {
         font-size: 2rem;
         padding: 1rem;
