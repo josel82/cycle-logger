@@ -21,7 +21,9 @@ const entriesReducer = (state = entriesReducerDefaultState, action) => {
                 }else{
                     return entry;
                 }
-            });    
+            });
+        case 'SET_ENTRIES':
+            return action.entries;   
         default:
             return state;
     }

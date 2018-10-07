@@ -28,6 +28,35 @@ export const startAddEntry = (entryData = {}) => {
     };
 };
 
+
+//REMOVE_ENTRY
+
+export const removeEntry = (id) => ({
+    type: 'REMOVE_ENTRY',
+    id
+});
+
+export const startRemoveEntry = (id) => {
+    return (dispatch) => {
+        database.ref(`Entries/${id}`)
+                    .remove()
+                        .then(()=>{
+                            dispatch(removeEntry(id));
+                        })
+                        .catch((e)=>{
+                            console.log('Error deleting', e);
+                            
+        });
+    }
+}
+
+//EDIT_ENTRY
+export const editEntry = (id, updates) => ({
+    type: 'EDIT_ENTRY',
+    id,
+    updates
+});
+
 export const startEditEntry = (id, entryData ) => {
     return (dispatch) => {
         const {
@@ -44,30 +73,26 @@ export const startEditEntry = (id, entryData ) => {
     }
 }
 
-export const startRemoveEntry = (id) => {
+//SET_ENTRIES
+
+export const setEntries = (entries) => ({
+    type: 'SET_ENTRIES',
+    entries
+});
+
+export const startSetEntries = () => {
     return (dispatch) => {
-        database.ref(`Entries/${id}`)
-                    .remove()
-                        .then(()=>{
-                            dispatch(removeEntry(id));
-                        })
-                        .catch((e)=>{
-                            console.log('Error deleting', e);
-                            
-        });
+        const entries = [];
+        return database.ref('Entries')
+                    .once('value')
+                        .then((snapshot)=>{
+                            snapshot.forEach((childSnapshot)=>{
+                                entries.push({
+                                    id:childSnapshot.key,
+                                    ...childSnapshot.val()
+                                });
+                            });                            
+                            dispatch(setEntries(entries));
+                        });
     }
 }
-
-//REMOVE_ENTRY
-
-export const removeEntry = (id) => ({
-    type: 'REMOVE_ENTRY',
-    id
-});
-
-//EDIT_ENTRY
-export const editEntry = (id, updates) => ({
-    type: 'EDIT_ENTRY',
-    id,
-    updates
-});
