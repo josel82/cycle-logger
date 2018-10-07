@@ -3,12 +3,12 @@ import 'firebase/database';
 import 'firebase/auth';
 
 const config = {
-    apiKey: "AIzaSyD87HBTv4Enf1HRM1h-5TUi_iq2ZIFPa14",
-    authDomain: "cycle-logger.firebaseapp.com",
-    databaseURL: "https://cycle-logger.firebaseio.com",
-    projectId: "cycle-logger",
-    storageBucket: "cycle-logger.appspot.com",
-    messagingSenderId: "735323952145"
+    apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+    authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+    databaseURL: process.env.REACT_APP_FIREBASE_DATABASE_URL,
+    projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID
 };
 
 
