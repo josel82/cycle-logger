@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import moment from 'moment';
 import { SingleDatePicker } from 'react-dates';
@@ -88,7 +89,7 @@ class EntryForm extends Component {
                     {
                         this.props.isEdit && 
                         <button 
-                            className="btn btn-default"
+                            className="btn btn-default btn-delete"
                             onClick={(e)=>{ 
                                 e.preventDefault();
                                 this.props.onRemoveEntry(this.props.entry.id);
@@ -107,4 +108,6 @@ class EntryForm extends Component {
     }
 }
 
-export default connect()(EntryForm);
+const EntryFormWithRouter = withRouter(EntryForm)
+
+export default connect()(EntryFormWithRouter);
