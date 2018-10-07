@@ -13,7 +13,7 @@ const DashboardPage = () => (
     <div className="page-content">
       <Route path="/dashboard" component={DashboardTable} exact={true} />
       <Route path="/dashboard/add" component={AddEntry} />
-      <Route path="/dashboard/edit" component={EditEntry} />
+      <Route path="/dashboard/edit/:id" component={EditEntry} />
     </div>
  </div>
 );

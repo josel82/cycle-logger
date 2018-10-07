@@ -34,18 +34,18 @@ export { firebase, database as default };
 //     console.log(snapshot.key, snapshot.val());
 // });
 
-// // database.ref('Entries')
-// //             .on('value', (snapshot)=>{
-// //                 const entries = [];
+// database.ref('Entries')
+//             .on('value', (snapshot)=>{
+//                 const entries = [];
 
-// //                 snapshot.forEach((childSnapshot)=>{
-// //                     entries.push({
-// //                         id: childSnapshot.key,
-// //                         ...childSnapshot.val()
-// //                 });
-// //                 console.log(entries);
-// //             });
-// // });
+//                 snapshot.forEach((childSnapshot)=>{
+//                     entries.push({
+//                         id: childSnapshot.key,
+//                         ...childSnapshot.val()
+//                 });
+//                 console.log(entries);
+//             });
+// });
 
 // // const date = moment('2018-09-02').format();
 // // database.ref('Entries').push({compound: 'Testoterone', quantity: 500, timestamp: date  }).then(()=>{}).catch((e)=>{

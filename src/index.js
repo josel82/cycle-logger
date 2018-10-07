@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { firebase } from './firebase/firebase';
+// import database, {firebase} from './firebase/firebase';
 import 'react-dates/initialize';
 import './sass/App.scss';
 import './index.css';
@@ -13,14 +13,14 @@ import configureStore from './store/configureStore'
 
 const store = configureStore();
 
-firebase.auth().onAuthStateChanged((user)=>{
+// firebase.auth().onAuthStateChanged((user)=>{
 
-  if(user){
-    console.log('Logged in');
-  }else{
-    console.log('Logged out');
-  }
-});
+//   if(user){
+//     console.log('Logged in');
+//   }else{
+//     console.log('Logged out');
+//   }
+// });
 
 const jsx = <Provider store={store}>
                 <AppRouter />

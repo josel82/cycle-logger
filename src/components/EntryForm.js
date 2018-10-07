@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
 import moment from 'moment';
 import { SingleDatePicker } from 'react-dates';
 import 'react-dates/lib/css/_datepicker.css';
@@ -63,8 +62,7 @@ class EntryForm extends Component {
                 quantity: parseInt(this.state.quantity, 10),
                 timestamp: this.state.timestamp.valueOf()
             }); 
-        }
-               
+        }          
     }
     render(){
         return (
@@ -96,6 +94,18 @@ class EntryForm extends Component {
                         numberOfMonths={1}
                         isOutsideRange={()=> false}
                         />
+                    {
+                        this.props.isEdit && 
+                        <button 
+                            className="btn btn-default"
+                            onClick={(e)=>{ 
+                                e.preventDefault();
+                                this.props.onRemoveEntry(this.props.entry.id);
+                            }}
+                            >
+                            Delete
+                        </button> 
+                    }
                     <div className="btn-inline-group">
                         <button className="btn btn-primary btn-md">Submit</button>
                         <button className="btn btn-default btn-md" onClick={this.onNavigateBack}>Back</button>
@@ -106,6 +116,4 @@ class EntryForm extends Component {
     }
 }
 
-const EntryFromWithRouter = withRouter(EntryForm);
-
-export default connect()(EntryFromWithRouter);
+export default connect()(EntryForm);

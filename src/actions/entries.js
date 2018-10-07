@@ -44,6 +44,20 @@ export const startEditEntry = (id, entryData ) => {
     }
 }
 
+export const startRemoveEntry = (id) => {
+    return (dispatch) => {
+        database.ref(`Entries/${id}`)
+                    .remove()
+                        .then(()=>{
+                            dispatch(removeEntry(id));
+                        })
+                        .catch((e)=>{
+                            console.log('Error deleting', e);
+                            
+        });
+    }
+}
+
 //REMOVE_ENTRY
 
 export const removeEntry = (id) => ({
