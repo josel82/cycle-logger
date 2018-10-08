@@ -1,7 +1,7 @@
-// import {firebase } from '../firebase/firebase';
+import {firebase, googleAuthProvider } from '../firebase/firebase';
 
-// export const startLogin = async () =>{
-//     return () => {
-//         return firebase.auth().signInWithPopup(googleAuthProvider);
-//     }
-// }
+export const startLogin = () =>{
+    return () => {
+        return firebase.auth().signInWithPopup(googleAuthProvider);
+    }
+}

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-// import database, {firebase} from './firebase/firebase';
+import { firebase } from './firebase/firebase';
 import 'react-dates/initialize';
 import './sass/App.scss';
 import './index.css';
@@ -31,11 +31,11 @@ store.dispatch(startSetEntries()).then(()=>{
 registerServiceWorker();
 
 
-// firebase.auth().onAuthStateChanged((user)=>{
+firebase.auth().onAuthStateChanged((user)=>{
 
-//   if(user){
-//     console.log('Logged in');
-//   }else{
-//     console.log('Logged out');
-//   }
-// });
+  if(user){
+    console.log('Logged in');
+  }else{
+    console.log('Logged out');
+  }
+});
