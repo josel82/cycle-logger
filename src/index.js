@@ -10,6 +10,7 @@ import AppRouter, { history } from './routers/AppRouter';
 import registerServiceWorker from './registerServiceWorker';
 import configureStore from './store/configureStore'
 import { startSetEntries } from './actions/entries';
+import { login, logout } from './actions/auth';
 
 // Sets up the Redux-Store
 const store = configureStore(); 
@@ -39,6 +40,8 @@ const renderApp = () => {
 firebase.auth().onAuthStateChanged((user)=>{
 
   if(user){
+    // It dispatches login action generator in order to store the user id into the redux store
+    store.dispatch(login(user.uid));
     // It dispatches startSetEntries action generator
     store.dispatch(startSetEntries()).then(()=>{
       renderApp(); // call to renderApp method
@@ -47,6 +50,8 @@ firebase.auth().onAuthStateChanged((user)=>{
       }
     });
   }else{// case where authentication fails
+    
+    store.dispatch(logout());//It dispatches logout action generator in order to clear the user id from the redux store
     renderApp(); // call to renderApp method
     history.push('/'); //redirects to Login page
   }

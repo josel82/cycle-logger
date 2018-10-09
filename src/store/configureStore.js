@@ -3,6 +3,7 @@ import thunk from 'redux-thunk';
 
 import entriesReducer from '../reducers/entriesReducer';
 import filtersReducer from '../reducers/filtersReducer';
+import authReducer from '../reducers/auth'
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose; //Redux devtools functionalities
 
@@ -12,6 +13,7 @@ const configureStore = () => {
         combineReducers({
             entries: entriesReducer,
             filters: filtersReducer,
+            auth: authReducer
         }),
         composeEnhancers(applyMiddleware(thunk))
     );
