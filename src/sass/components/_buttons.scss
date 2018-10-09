@@ -66,4 +66,15 @@
     width: 13rem;
 }
 
+//*****************   Google Button Styles   **********************
 
+.btn-google {
+    text-align: center;
+
+    &__logo {
+        display: inline-block;
+        background: url('/assets/img/btn_google_signin_dark_normal_web.png') no-repeat;
+        width: 19rem;
+        height: 4.6rem;
+    }
+}

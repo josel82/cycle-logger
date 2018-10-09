@@ -31,6 +31,11 @@ body {
         }
     }
 }
+.title{
+    text-transform: uppercase;
+    color: $color-primary;
+    margin-bottom: 3rem;
+}
 
 .sidebar{
     &__navigation__item{

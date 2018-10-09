@@ -1,42 +1,18 @@
-import React, { Component } from 'react';
-import AuthForm from './AuthForm';
+import React from 'react';
 import { connect } from 'react-redux';
+
 import { startLogin } from '../actions/auth';
 
-class LoginPage extends Component {
-
-    // handleAuthorization(email, password){
-        
-    //     auth.signInWithEmailAndPassword(email, password).then((credentials)=>{
-    //         localStorage.setItem('uid', credentials.user.uid);
-    //         console.log(credentials.user);
-            
-    //     }).catch((error)=>{
-    //         var errorCode = error.code;
-    //         var errorMessage = error.message;
-    //         if (errorCode === 'auth/wrong-password') {
-    //             alert('Wrong password.');
-    //         } else {
-    //             alert(errorMessage);
-    //         }
-    //         console.log(error);
-    //     });
-        
-    // }
-    render(){
-        return (
-            <React.Fragment>
-                <AuthForm action='Sign In' handleAuthorization={()=>{return;}}/>
-                <button 
-                    onClick={this.props.startLogin} 
-                    className="btn btn-primary btn-md google-login"
-                    >
-                    Login
-                </button>
-            </React.Fragment>
-        )
-    }
-}
+const LoginPage = (props) => 
+ (
+          <div className="login-container">
+            <h1 className="title">Cycle-Logger</h1>
+            <div className="btn btn-google btn-md" onClick={props.startLogin}>
+                <span className="btn-google__logo"></span>
+            </div>
+          </div>
+);
+ 
 
 const mapDispatchToProps = (dispatch) => ({
     startLogin: () => dispatch(startLogin())
