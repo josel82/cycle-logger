@@ -9,8 +9,8 @@ export const addEntry = (entry) => ({
 
 export const startAddEntry = (entryData = {}) => {
     
-    return (dispatch) => {
-
+    return (dispatch, getState) => {
+        const uid = getState().auth.uid;
         const {
             compound = '',  
             quantity = 0, 
@@ -19,7 +19,7 @@ export const startAddEntry = (entryData = {}) => {
         
         const entry = { compound, quantity, timestamp };
 
-        database.ref('Entries').push(entry).then((ref)=>{
+        database.ref(`users/${uid}/entries`).push(entry).then((ref)=>{
             dispatch(addEntry({
                 id:ref.key,
                 ...entry
@@ -37,8 +37,9 @@ export const removeEntry = (id) => ({
 });
 
 export const startRemoveEntry = (id) => {
-    return (dispatch) => {
-        database.ref(`Entries/${id}`)
+    return (dispatch, getState) => {
+        const uid = getState().auth.uid;
+        database.ref(`users/${uid}/entries/${id}`)
                     .remove()
                         .then(()=>{
                             dispatch(removeEntry(id));
@@ -58,7 +59,9 @@ export const editEntry = (id, updates) => ({
 });
 
 export const startEditEntry = (id, entryData ) => {
-    return (dispatch) => {
+    return (dispatch, getState) => {
+        const uid = getState().auth.uid;
+
         const {
             compound,  
             quantity, 
@@ -67,7 +70,7 @@ export const startEditEntry = (id, entryData ) => {
         
         const entry = { compound, quantity, timestamp };
 
-        database.ref(`Entries/${id}`).update(entry, ()=>{
+        database.ref(`users/${uid}/entries/${id}`).update(entry, ()=>{
             dispatch(editEntry(id, entry));
         });
     }
@@ -81,9 +84,10 @@ export const setEntries = (entries) => ({
 });
 
 export const startSetEntries = () => {
-    return (dispatch) => {
+    return (dispatch, getState) => {
+        const uid = getState().auth.uid;
         const entries = [];
-        return database.ref('Entries')
+        return database.ref(`users/${uid}/entries`)
                     .once('value')
                         .then((snapshot)=>{
                             snapshot.forEach((childSnapshot)=>{
