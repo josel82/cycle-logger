@@ -64,7 +64,8 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js --env=jsdom"
+    "test": "node scripts/test.js --env=jsdom",
+    "heroku-postbuild": "npm run build"
   },
   "devDependencies": {
     "node-sass": "^4.9.3",
