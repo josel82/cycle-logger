@@ -11,9 +11,11 @@ const DashboardPage = () => (
   <div className="dashboard-page">
     <Sidebar />
     <div className="page-content">
-      <Route path="/dashboard" component={DashboardTable} exact={true} />
-      <Route path="/dashboard/add" component={AddEntry} />
-      <Route path="/dashboard/edit/:id" component={EditEntry} />
+      <div className="page-content__box">
+        <Route path="/dashboard" component={DashboardTable} exact={true} />
+        <Route path="/dashboard/add" component={AddEntry} />
+        <Route path="/dashboard/edit/:id" component={EditEntry} />
+      </div>
     </div>
  </div>
 );

@@ -1,5 +1,5 @@
 .header {
-    background-color: $color-white;
+    background-color: $color-primary;
     min-height: 6.5rem;
     position: fixed;
     top: 0;
@@ -31,5 +31,20 @@
     
     .logo {
         height: 2.5rem;
+        @media only screen and  (max-width : 768px) {
+            height: 1.6rem;
+        }
+    }
+}
+
+.nav-text{
+    @media only screen and  (max-width : 768px) {
+        display: none;
+    }
+}
+
+.nav-icon{
+    @media only screen and  (min-width : 768px) {
+        display: none;
     }
 }

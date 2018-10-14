@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css?family=Audiowide');
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 1.6rem;
     color: $color-text-grey;
 }
@@ -22,11 +22,11 @@ body {
                 &:link,
                 &:visited{
                     text-decoration: none;
-                    color: $color-text-grey;
+                    color: $color-white;
                     font-weight: bold;
                 }
                 &:hover {
-                    color: $color-primary;
+                    color: $color-off-white;
                 }
             }
         }
