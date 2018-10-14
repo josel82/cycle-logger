@@ -12,10 +12,6 @@
     padding: 0 2rem;
     box-shadow: 0 4px 4px -2px rgba($color-black, .2);
 
-    &__logo {
-        margin:0;
-    }
-
     &__navigation {
         ul {
             list-style: none;
@@ -29,4 +25,11 @@
             }
         }
     } 
+}
+
+.logo-box {
+    
+    .logo {
+        height: 2.5rem;
+    }
 }

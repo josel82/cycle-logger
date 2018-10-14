@@ -6,7 +6,9 @@ import { startLogout } from '../actions/auth';
 const Header = ({ startLogout }) => (
             
     <header className="header">
-        <h2 className="header__logo">Cycle-Logger</h2>
+        <div className="logo-box">
+            <img src="/assets/img/logo-lg.png" alt="Logo" className="logo"/>
+        </div>
         <nav className="header__navigation">
             <ul> 
                 <li><NavLink to={'/'} onClick={startLogout}>Log out</NavLink></li>
