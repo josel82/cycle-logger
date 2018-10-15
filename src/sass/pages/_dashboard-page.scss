@@ -35,10 +35,6 @@
             padding-top: 0;
         }
     }
-
-    @media only screen and  (max-width : 768px) {
-        display: none;
-    }
 }
 
 .page-content {
@@ -47,22 +43,21 @@
     order: 2;
 
     &__box{
-        max-width: 114rem;
+        max-width: 80rem;
         margin: 0 auto;
     }
 }
 
 .table{
     border-collapse: collapse;
+    table-layout: auto;
     width: 100%;
     cursor: default;
     background-color: $color-white;
     border-radius: 4px;
     box-shadow: 0 3px .6rem rgba($color-black, 0.2);
     
-    @media only screen and  (max-width : 768px) {
-        font-size: 1.4rem;
-    }
+   
     tr{
         &:hover {
             background-color: rgba($color-grey, .3);
@@ -80,9 +75,6 @@
         .fa-angle-down{
             float: right;
         }
-        @media only screen and  (max-width : 768px) {
-            font-size: 1.2rem;
-        }
     }
     td {
         height: 4.8rem;
@@ -93,5 +85,20 @@
     }
     &__cell--spread {
         text-align: center;
+    }
+}
+
+@media only screen and  (max-width : 768px) {
+
+    .sidebar{
+        display: none;
+    }
+
+    .table{
+        font-size: 1.4rem;
+
+        th{
+            font-size: 1.2rem;
+        }
     }
 }

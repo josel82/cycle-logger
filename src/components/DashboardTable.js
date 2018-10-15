@@ -13,6 +13,11 @@ import { sortByQuantity, sortByDate } from '../actions/filters';
 const DashboardTable = (props) => (
     <React.Fragment>
         <table className="table">
+            <colgroup>
+                <col style={{width:'50%'}}/>
+                <col style={{width:'20%'}}/>
+                <col style={{width:'30%'}}/>
+            </colgroup>  
             <tbody>
                 <tr>
                     <th>Compound</th>
@@ -20,7 +25,7 @@ const DashboardTable = (props) => (
                         onClick={()=>{
                             props.dispatch(sortByQuantity());  
                         }}>
-                        Quantity (mg) {props.filters.sortBy === 'quantity' && <FontAwesomeIcon icon={faAngleDown}/>}
+                        Qty (mg) {props.filters.sortBy === 'quantity' && <FontAwesomeIcon icon={faAngleDown}/>}
                     </th>
                     <th 
                         onClick={()=>{
