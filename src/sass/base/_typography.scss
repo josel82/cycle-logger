@@ -8,30 +8,32 @@ body {
     color: $color-text-grey;
 }
 
+.header{
 
-.header__logo{
-    font-family: 'Roboto', sans-serif;
-    font-size: 2.4rem;
-    color: $color-primary;
-}
-
-.header__navigation {
-    ul {
-        li{
-            a{
-                &:link,
-                &:visited{
-                    text-decoration: none;
-                    color: $color-white;
-                    font-weight: bold;
-                }
-                &:hover {
-                    color: $color-off-white;
+    &__navigation {
+        ul {
+            li{
+                a{
+                    &:link,
+                    &:visited{
+                        font-size: 1.4rem;
+                        color: $color-text-grey;
+                        text-decoration: none;
+                        text-align: center;
+                        text-transform: uppercase;
+                    }
+                    
                 }
             }
         }
+        &--icon{
+            text-align: right;
+            color: rgba($color-text-grey, .5);
+        }
     }
 }
+
+
 .heading-primary{
     text-transform: uppercase;
     color: $color-text-grey;
