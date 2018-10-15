@@ -37,10 +37,7 @@ class EntryForm extends Component {
     onFocusChange = ({focused}) => {
         this.setState(()=>({calendarFocused:focused}))
     }
-    onNavigateBack = (e) => {
-        e.preventDefault();
-        this.props.history.push('/dashboard');
-    }
+   
     handleOnSubmit = (e) => {
         e.preventDefault();
         const { compound, quantity } = this.state;
@@ -101,9 +98,8 @@ class EntryForm extends Component {
                             Delete
                         </button> 
                     }
-                    <div className="btn-inline-group">
+                    <div className="btn-block-group">
                         <button className="btn btn-primary btn-md">Submit</button>
-                        <button className="btn btn-default btn-md" onClick={this.onNavigateBack}>Back</button>
                     </div>
                 </form>
             </React.Fragment>

@@ -7,6 +7,7 @@
     .form-input {
         font-size: 2rem;
         padding: 1rem;
+        border-radius: 2rem;
     }
         
     input[name=compound] {
@@ -41,10 +42,11 @@
         border: none;
     }
 
-    .btn-inline-group {
+    .btn-block-group {
         grid-column-start: 1;
         grid-column-end: 3;
         grid-row-start: 4;
-        grid-row-end: 5;    
+        grid-row-end: 5; 
+        
     }
 }

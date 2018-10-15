@@ -8,7 +8,7 @@ export const PrivateRoute = ({isAuthenticated, component: Component, ...rest}) =
     if(isAuthenticated){
         return (
             <React.Fragment>
-                <Header />
+                <Header {...rest}/>
                 <Route {...rest} component={(props)=>(
                                 <Component {...props} />
                             )} 

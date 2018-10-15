@@ -58,6 +58,19 @@
     }
 }
 
+.btn-block-group {
+
+    display: flex;
+    flex-direction: column;
+
+    .btn-primary,
+    .btn-default {
+        display: inline-block;
+        width: 100%;
+        border-radius: 2.5rem;
+    }
+}
+
 //*********************   Button types   *************************
 
 .btn-delete {
@@ -82,9 +95,7 @@
     right: 4rem;
     box-shadow: 0 3px .6rem rgba($color-black, 0.2);
    
-    @media only screen and (min-width : 768px) {
-        display: none;
-    }
+    
 }
 
 //*****************   Google Button Styles   **********************
@@ -98,4 +109,16 @@
         width: 19rem;
         height: 4.6rem;
     }
+}
+
+@media only screen and (min-width : 768px) {
+    .btn-floating{
+        display: none;
+    }
+
+    .btn-primary,
+    .btn-default {
+        max-width: 30rem;
+    }
+
 }

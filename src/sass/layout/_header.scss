@@ -90,15 +90,20 @@
 } 
 
 .logo-box {
-    
+    margin-left: 3rem;
     .logo {
         height: 2rem;
-        @media only screen and  (max-width : 768px) {
+        
+    }
+}
+@media only screen and  (max-width : 768px) {
+    .logo-box{
+        margin: 0;
+        .logo{
             height: 1.6rem;
         }
     }
 }
-
 
 .menu-toggle {
     position:absolute;
@@ -141,4 +146,8 @@
     }
 }
 
-
+.btn-back {
+    position: absolute;
+    color: $color-white;
+    left: 2rem;
+}

@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 import { startLogout } from '../actions/auth';
 
@@ -16,9 +17,18 @@ class Header extends Component {
     toggleMenu = () => {
         this.setState({isOpened:!this.state.isOpened});
     }
+    navigateBack = () =>{
+        this.props.history.push(this.props.path);
+    }
     render(){
         return (         
             <header className="header">
+                {
+                    this.props.location.pathname !== "/dashboard" && 
+                    <span className="btn-back" onClick={this.navigateBack}>
+                        <FontAwesomeIcon icon={faArrowLeft} />
+                    </span>
+                }
                 <div className="logo-box">
                     <img src="/assets/img/logo-lg-inv.png" alt="Logo" className="logo"/>
                 </div>
@@ -46,4 +56,6 @@ const mapDispatchToProps = (dispatch) => ({
     startLogout: () => dispatch(startLogout())
 });
 
-export default connect(undefined, mapDispatchToProps)(Header);
+const HeaderWithRouter = withRouter(Header)
+
+export default connect(undefined, mapDispatchToProps)(HeaderWithRouter);
