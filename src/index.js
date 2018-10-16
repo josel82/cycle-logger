@@ -11,6 +11,7 @@ import registerServiceWorker from './registerServiceWorker';
 import configureStore from './store/configureStore'
 import { startSetEntries } from './actions/entries';
 import { login, logout } from './actions/auth';
+import Spinner from './components/Spinner';
 
 // Sets up the Redux-Store
 const store = configureStore(); 
@@ -20,7 +21,7 @@ const jsx = <Provider store={store}>
             </Provider>;
 
 //Temporary loading spinner
-ReactDOM.render(<p>Loading...</p>, document.getElementById('root'));
+ReactDOM.render(<Spinner />, document.getElementById('root'));
 
 registerServiceWorker();
 
