@@ -4,10 +4,12 @@
     grid-template-rows: 5rem 5rem 15rem 5rem;
     align-items: start; 
     
-    .form-input {
-        font-size: 2rem;
+    .form-input, .DateInput_input {
+        font-size: 1.6rem;
         padding: 1rem;
         border-radius: 2rem;
+        border: none;
+        color:$color-text-grey;
     }
         
     input[name=compound] {
@@ -28,6 +30,16 @@
         grid-column-end: 2;
         grid-row-start: 3;
         grid-row-end: 4;
+        border: none;
+
+        &, .DateInput {
+            background-color: transparent;
+
+            &_input{
+                text-align: center;
+            }
+        }
+
     }
 
     .btn-delete {
@@ -38,10 +50,6 @@
         justify-self: end;
     }
 
-    .SingleDatePickerInput, .form-input{
-        border: none;
-    }
-
     .btn-block-group {
         grid-column-start: 1;
         grid-column-end: 3;
@@ -50,3 +58,6 @@
         
     }
 }
+                
+
+

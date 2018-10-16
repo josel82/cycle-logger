@@ -94,7 +94,7 @@ class EntryForm extends Component {
                                 this.props.onRemoveEntry(this.props.match.params.id);
                             }}
                             >
-                            <FontAwesomeIcon icon={faTrashAlt}/>   
+                            <FontAwesomeIcon icon={faTrashAlt} style={{marginRight:'.8rem'}}/>   
                             Delete
                         </button> 
                     }
