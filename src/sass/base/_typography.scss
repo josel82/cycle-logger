@@ -36,18 +36,17 @@ body {
 
 .heading-primary{
     text-transform: uppercase;
-    color: $color-text-grey;
     margin-bottom: 3rem;
     font-family: 'Audiowide', sans-serif;
-    font-size: 3.6rem;
-
-    &__parcial {
-        display: block;
-        text-align: center;
-    }
+    font-size: 5rem;
+    background-image: url("/assets/img/gym-2.jpeg");
+    background-position: bottom;
+    background-size: cover;
+    -webkit-background-clip: text;
+    color:transparent;
     &__parcial__bold {
         color: $color-primary;
-        font-size: 4.8rem;
+        font-size: 7rem;
     }
 }
 
