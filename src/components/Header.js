@@ -15,9 +15,11 @@ class Header extends Component {
             isOpened: false,
             showBackBtn: false
         }
+
     }
     componentDidUpdate(prevProps) { 
         if (this.props.location !== prevProps.location) {
+            
             this.setState({showBackBtn: this.props.location.pathname !== "/dashboard"});
         }
     }
@@ -35,8 +37,15 @@ class Header extends Component {
                     in={this.state.showBackBtn}
                     appear={true}
                     timeout={600}
-                    classNames="fade">
-                    <span className="btn-back fade-exit-done" onClick={this.navigateBack}>
+                    classNames="fade"
+                    onExited={()=>{
+
+                    }}>
+                    <span 
+                        className={
+                            `btn-back ${this.props.location.pathname === '/dashboard' && 'fade-exit-done' }`
+                        } 
+                        onClick={this.navigateBack}>
                         <FontAwesomeIcon icon={faArrowLeft} />
                     </span>
                 </CSSTransition>

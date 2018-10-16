@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 import DashboardTable from './DashboardTable';
 import AddEntry from './AddEntry';
@@ -12,9 +12,9 @@ const DashboardPage = () => (
     <Sidebar />
     <div className="page-content">
       <div className="page-content__box">
-        <Route path="/dashboard" component={DashboardTable} exact={true} />
-        <Route path="/dashboard/add" component={AddEntry} />
-        <Route path="/dashboard/edit/:id" component={EditEntry} />
+          <Route path="/dashboard" component={DashboardTable} exact />
+          <Route path="/dashboard/add" component={AddEntry} />
+          <Route path="/dashboard/edit/:id" component={EditEntry} />
       </div>
     </div>
  </div>
