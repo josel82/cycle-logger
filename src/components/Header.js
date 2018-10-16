@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink, withRouter } from 'react-router-dom';
+import { CSSTransition } from 'react-transition-group';
 import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
@@ -11,7 +12,13 @@ class Header extends Component {
     constructor(props){
         super(props);
         this.state = {
-            isOpened: false
+            isOpened: false,
+            showBackBtn: false
+        }
+    }
+    componentDidUpdate(prevProps) { 
+        if (this.props.location !== prevProps.location) {
+            this.setState({showBackBtn: this.props.location.pathname !== "/dashboard"});
         }
     }
     toggleMenu = () => {
@@ -23,12 +30,17 @@ class Header extends Component {
     render(){
         return (         
             <header className="header">
-                {
-                    this.props.location.pathname !== "/dashboard" && 
-                    <span className="btn-back" onClick={this.navigateBack}>
+                
+                <CSSTransition 
+                    in={this.state.showBackBtn}
+                    appear={true}
+                    timeout={600}
+                    classNames="fade">
+                    <span className="btn-back fade-exit-done" onClick={this.navigateBack}>
                         <FontAwesomeIcon icon={faArrowLeft} />
                     </span>
-                }
+                </CSSTransition>
+                
                 <div className="logo-box">
                     <img src="/assets/img/logo-lg-inv.png" alt="Logo" className="logo"/>
                 </div>
