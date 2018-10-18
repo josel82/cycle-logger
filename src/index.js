@@ -7,7 +7,6 @@ import './sass/App.scss';
 import './index.css';
 
 import AppRouter, { history } from './routers/AppRouter';
-import registerServiceWorker from './registerServiceWorker';
 import configureStore from './store/configureStore'
 import { startSetEntries } from './actions/entries';
 import { login, logout } from './actions/auth';
@@ -23,7 +22,6 @@ const jsx = <Provider store={store}>
 //Temporary loading spinner
 ReactDOM.render(<Spinner />, document.getElementById('root'));
 
-registerServiceWorker();
 
 
 let hasRendered = false; 
