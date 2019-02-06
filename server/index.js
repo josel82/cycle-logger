@@ -10,6 +10,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const { Pool } = require('pg');
+const uuid = require('uuid/v4');
 
 /****************************************************
 ******************** VARIABLES **********************
@@ -31,14 +32,14 @@ app.use(cors());
 app.use(bodyParser.json());
 
 pgClient.on('error', () => console.log('Lost PG Connection'));
-pgClient.query('CREATE TABLE IF NOT EXISTS entries (id text PRIMARY KEY, compound text, quantity integer, timestamp integer, uid text)')
+pgClient.query('CREATE TABLE IF NOT EXISTS entries (id text PRIMARY KEY, compound text, quantity integer, timestamp bigint, uid text)')
         .catch(error => console.log(error));
 
 /****************************************************
 **************** ROUTES HANDLERS ********************
 *****************************************************/
 
-app.get('/entries/:uid', async(req, res)=>{
+app.get('/users/:uid/entries', async(req, res)=>{
     const uid = req.params.uid;
     const query = `SELECT * FROM entries WHERE uid = $1`;
     const values = [uid];
@@ -50,11 +51,14 @@ app.get('/entries/:uid', async(req, res)=>{
     }
 });
 
-app.post('/entries', async(req, res)=>{
-    const {id, compound, quantity, timestamp, uid} = req.body;
+app.post('/users/:uid/entries', async(req, res)=>{
+    const { compound, quantity, timestamp } = req.body;
+    const { uid } = req.params;
+    const id = uuid();
+    
     const query = `INSERT INTO 
                         entries(id, compound, quantity, timestamp, uid) 
-                    VALUES ($1, $2, $3, $4, $5)`;
+                    VALUES ($1, $2, $3, $4, $5) RETURNING *`;
     const values = [id, compound, quantity, timestamp, uid]
 
     try{
@@ -65,20 +69,19 @@ app.post('/entries', async(req, res)=>{
     }
 });
 
-app.patch('/entries', async(req, res)=>{
+app.patch('/users/:uid/entries/:id', async(req, res)=>{
+    const { id } = req.params;
     const body = req.body;
     let query = "UPDATE entries SET";
-    let param = 1;
-    const values = [body.id]
+    let count = 1;
+    const values = [id]
     for (let key in body) {
-        if (key !== 'id') {
-            param++;
-            query += ` ${key}=$${param},`;
-            values.push(body[key]);
-        }
+        count++;
+        query += ` ${key}=$${count},`;
+        values.push(body[key]);
     }
     query = query.substring(0, query.length - 1); //Removes last coma
-    query += " WHERE id=$1";
+    query += " WHERE id=$1 RETURNING *";
 
     try {
         const entry = await pgClient.query(query, values);
@@ -88,10 +91,10 @@ app.patch('/entries', async(req, res)=>{
     }
 });
 
-app.delete('/entries', async (req, res)=>{
-    const {id} = req.body;
-    const query = "DELETE FROM entries WHERE id=$1"
-    const values = [id];
+app.delete('/users/:uid/entries/:id', async (req, res)=>{
+    const { uid, id } = req.params;
+    const query = "DELETE FROM entries WHERE uid=$1 AND id=$2 RETURNING *"
+    const values = [uid, id];
 
     try {
         const del = await pgClient.query(query, values);
