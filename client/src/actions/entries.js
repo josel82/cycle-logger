@@ -18,14 +18,14 @@ export const startAddEntry = (entryData = {}) => {
         
         const entry = { compound, quantity, timestamp };
 
-        axios.post(`/api/users/${uid}/entries`, entry).then((response) => {
-            dispatch(addEntry({
-                
-                
-                id:response.data[0].id,
-                ...entry
-            }));
-        }).catch(error => console.log(error));
+        return axios.post(`/api/users/${uid}/entries`, entry).then((response) => {
+                    dispatch(addEntry({
+                        
+                        
+                        id:response.data[0].id,
+                        ...entry
+                    }));
+                }).catch(error => console.log(error));
     };
 };
 
@@ -41,7 +41,7 @@ export const startRemoveEntry = (id) => {
     return (dispatch, getState) => {
         const uid = getState().auth.uid;
         
-        axios.delete(`/api/users/${uid}/entries/${id}`)
+        return axios.delete(`/api/users/${uid}/entries/${id}`)
                 .then(response => dispatch(removeEntry(id)))
                 .catch(error => console.log(error));
     }
@@ -66,7 +66,7 @@ export const startEditEntry = (id, entryData ) => {
         
         const entry = { compound, quantity, timestamp };
 
-        axios.patch(`/api/users/${uid}/entries/${id}`, entry)
+        return axios.patch(`/api/users/${uid}/entries/${id}`, entry)
                 .then(response => dispatch(editEntry(id, entry)))
                 .catch(error => console.log(error));
     }
