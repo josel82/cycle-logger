@@ -1,7 +1,6 @@
-import database from '../firebase/firebase';
+import axios from 'axios';
 
 //ADD_ENTRY
-
 export const addEntry = (entry) => ({
     type: 'ADD_ENTRY',
     entry
@@ -19,12 +18,14 @@ export const startAddEntry = (entryData = {}) => {
         
         const entry = { compound, quantity, timestamp };
 
-        database.ref(`users/${uid}/entries`).push(entry).then((ref)=>{
-            dispatch(addEntry({
-                id:ref.key,
-                ...entry
-            }));
-        });
+        return axios.post(`/api/users/${uid}/entries`, entry).then((response) => {
+                    dispatch(addEntry({
+                        
+                        
+                        id:response.data[0].id,
+                        ...entry
+                    }));
+                }).catch(error => console.log(error));
     };
 };
 
@@ -39,15 +40,10 @@ export const removeEntry = (id) => ({
 export const startRemoveEntry = (id) => {
     return (dispatch, getState) => {
         const uid = getState().auth.uid;
-        database.ref(`users/${uid}/entries/${id}`)
-                    .remove()
-                        .then(()=>{
-                            dispatch(removeEntry(id));
-                        })
-                        .catch((e)=>{
-                            console.log('Error deleting', e);
-                            
-        });
+        
+        return axios.delete(`/api/users/${uid}/entries/${id}`)
+                .then(response => dispatch(removeEntry(id)))
+                .catch(error => console.log(error));
     }
 }
 
@@ -70,9 +66,9 @@ export const startEditEntry = (id, entryData ) => {
         
         const entry = { compound, quantity, timestamp };
 
-        database.ref(`users/${uid}/entries/${id}`).update(entry, ()=>{
-            dispatch(editEntry(id, entry));
-        });
+        return axios.patch(`/api/users/${uid}/entries/${id}`, entry)
+                .then(response => dispatch(editEntry(id, entry)))
+                .catch(error => console.log(error));
     }
 }
 
@@ -87,16 +83,19 @@ export const startSetEntries = () => {
     return (dispatch, getState) => {
         const uid = getState().auth.uid;
         const entries = [];
-        return database.ref(`users/${uid}/entries`)
-                    .once('value')
-                        .then((snapshot)=>{
-                            snapshot.forEach((childSnapshot)=>{
-                                entries.push({
-                                    id:childSnapshot.key,
-                                    ...childSnapshot.val()
-                                });
-                            });                            
-                            dispatch(setEntries(entries));
+        
+        return axios.get(`/api/users/${uid}/entries`)
+                    .then(response => {
+                        
+                        response.data.forEach(entry => {
+                            entries.push({
+                                id: entry.id,
+                                compound: entry.compound,
+                                quantity: entry.quantity,
+                                timestamp: parseInt(entry.timestamp, 10)
+                            });
                         });
+                        dispatch(setEntries(entries));
+                    }).catch(error => console.log(error));
     }
 }
