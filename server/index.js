@@ -32,7 +32,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 pgClient.on('error', () => console.log('Lost PG Connection'));
-pgClient.query('CREATE TABLE IF NOT EXISTS entries (id text PRIMARY KEY, compound text, quantity integer, timestamp bigint, uid text)')
+pgClient.query('CREATE TABLE IF NOT EXISTS entries (id text PRIMARY KEY, compound text, quantity decimal, timestamp bigint, uid text)')
         .catch(error => console.log(error));
 
 /****************************************************
