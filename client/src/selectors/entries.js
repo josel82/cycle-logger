@@ -1,9 +1,10 @@
-
+import moment from 'moment';
 
 const getVisibleEntries = (entries, {text, sortBy, startDate, endDate}) => {
     return entries.filter((entry)=>{
-        const startDateMatch = typeof startDate !== 'number' || entry.timestamp >= startDate;
-        const endDateMatch = typeof endDate !== 'number' || entry.timestamp <= endDate;
+        const timestampMoment = moment(entry.timestamp);
+        const startDateMatch = startDate ? startDate.isSameOrBefore(timestampMoment, 'day') : true;
+        const endDateMatch = endDate ? endDate.isSameOrAfter(timestampMoment, 'day') : true;
         const textMatch = entry.compound.toLowerCase().includes(text.toLowerCase())
 
         return startDateMatch && endDateMatch && textMatch;

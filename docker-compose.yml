@@ -16,6 +16,8 @@ services:
     volumes: 
       - /app/node_modules
       - ./server:/app
+    depends_on:
+      - 'postgress'
   client:
     build: 
       dockerfile: Dockerfile.dev
