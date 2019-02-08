@@ -17,7 +17,7 @@ services:
       - /app/node_modules
       - ./server:/app
     depends_on:
-      - 'postgress'
+      - 'postgres'
   client:
     build: 
       dockerfile: Dockerfile.dev
