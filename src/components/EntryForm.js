@@ -25,7 +25,7 @@ class EntryForm extends Component {
     }
     onQuantityChange = (e) => {
         const quantity = e.target.value;
-        if(quantity.match(/^\d*$/)){
+        if(quantity.match(/^\d*(\.\d{0,3})?$/)){
             this.setState(()=>({quantity}));
         }
     }
@@ -50,7 +50,7 @@ class EntryForm extends Component {
             this.setState({ error: '' });
             this.props.onFormSubmit({
                 compound: this.state.compound,
-                quantity: parseInt(this.state.quantity, 10),
+                quantity: parseFloat(this.state.quantity, 10),
                 timestamp: this.state.timestamp.valueOf()
             }); 
         }          
