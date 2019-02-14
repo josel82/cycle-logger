@@ -55,6 +55,27 @@ test('should not set quantity for invalid input', ()=>{
 test('should set timestamp on datepicker change', ()=>{
     const timestamp = moment();
     const wrapper = shallow(<EntryForm />);
-    wrapper.find('withStyles(SingleDatePicker)').simulate('change', {timestamp});
+    wrapper.find('withStyles(SingleDatePicker)').prop('onDateChange')(timestamp);
     expect(wrapper.state('timestamp')).toEqual(timestamp);
+});
+
+test('should set calendarFocused on focus change', ()=>{
+    const focused = true;
+    const wrapper = shallow(<EntryForm />);
+    wrapper.find('withStyles(SingleDatePicker)').prop('onFocusChange')({focused});
+    expect(wrapper.state('calendarFocused')).toBe(focused);
+});
+
+test('should call onSubmit prop for valid form submission', ()=>{
+    const onSubmitSpy = jest.fn();
+    const wrapper = shallow(<EntryForm entry={entries[0]} onFormSubmit={onSubmitSpy}/>);
+    wrapper.find('form').simulate('submit', {
+        preventDefault: () => {}
+    });
+    expect(wrapper.state('error')).toBe('');
+    expect(onSubmitSpy).toHaveBeenLastCalledWith({
+        compound: entries[0].compound,
+        quantity: entries[0].quantity,
+        timestamp: entries[0].timestamp
+    });
 });
