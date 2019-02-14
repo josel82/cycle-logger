@@ -5,9 +5,8 @@ import { faTrashAlt } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import moment from 'moment';
 import { SingleDatePicker } from 'react-dates';
-import 'react-dates/lib/css/_datepicker.css';
 
-class EntryForm extends Component {
+export class EntryForm extends Component {
     constructor(props){
         super(props);
         this.state = { 
