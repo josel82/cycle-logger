@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render EditEntry correctly 1`] = `
+<Connect(withRouter(EntryForm))
+  entry={
+    Object {
+      "compound": "Placebo",
+      "id": "3434343dbdbdbdb23343432nd",
+      "quantity": 20,
+      "timestamp": 0,
+    }
+  }
+  isEdit={true}
+  onFormSubmit={[Function]}
+  onRemoveEntry={[Function]}
+/>
+`;
