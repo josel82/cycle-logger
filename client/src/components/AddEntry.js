@@ -4,21 +4,21 @@ import { connect } from 'react-redux';
 import { startAddEntry } from '../actions/entries'
 import EntryForm from './EntryForm';
 
-class AddEntry extends Component {
+export class AddEntry extends Component {
 
-    onAddEntry = (entry) =>{                
-        this.props.startAddEntry(entry);
+    onSubmit = (entry) =>{                
+        this.props.onSubmit(entry);
         this.props.history.push('/dashboard');
     }
     render(){
         return (
-            <EntryForm onFormSubmit={this.onAddEntry}/>
+            <EntryForm onFormSubmit={this.onSubmit}/>
         );
     }
 }
 
 const mapDispatchToProps = (dispatch) => ({
-    startAddEntry: (entry) => dispatch(startAddEntry(entry))
+    onSubmit: (entry) => dispatch(startAddEntry(entry))
 });
 
 export default connect(undefined, mapDispatchToProps)(AddEntry);
