@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render DashboardPage component properly 1`] = `
+<div
+  className="dashboard-page"
+>
+  <Connect(Sidebar) />
+  <div
+    className="page-content"
+  >
+    <div
+      className="page-content__box"
+    >
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/dashboard"
+      />
+      <Route
+        component={[Function]}
+        path="/dashboard/add"
+      />
+      <Route
+        component={[Function]}
+        path="/dashboard/edit/:id"
+      />
+    </div>
+  </div>
+</div>
+`;
