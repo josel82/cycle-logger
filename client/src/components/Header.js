@@ -8,7 +8,7 @@ import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 import { startLogout } from '../actions/auth';
 
-class Header extends Component {
+export class Header extends Component {
     constructor(props){
         super(props);
         this.state = {
@@ -19,7 +19,6 @@ class Header extends Component {
     }
     componentDidUpdate(prevProps) { 
         if (this.props.location !== prevProps.location) {
-            
             this.setState({showBackBtn: this.props.location.pathname !== "/dashboard"});
         }
     }
