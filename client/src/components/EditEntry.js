@@ -4,15 +4,15 @@ import { connect } from 'react-redux';
 import { startEditEntry, startRemoveEntry } from '../actions/entries';
 import EntryForm from './EntryForm';
 
-class EditEntry extends Component {
+export class EditEntry extends Component {
 
     onEditEntry = (updates) =>{
         const id = this.props.entry.id;                
-        this.props.startEditEntry(id, updates);
+        this.props.onEditEntry(id, updates);
         this.props.history.push('/dashboard');
     }
     onRemoveEntry = (id) => {
-        this.props.startRemoveEntry(id);
+        this.props.onRemoveEntry(id);
         this.props.history.push('/dashboard');
     }
     render(){
@@ -32,8 +32,8 @@ const mapStateToProps = (state, props) =>({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-        startEditEntry: (id, entry) => dispatch(startEditEntry(id,entry)),
-        startRemoveEntry: (id) => dispatch(startRemoveEntry(id))
+        onEditEntry: (id, entry) => dispatch(startEditEntry(id,entry)),
+        onRemoveEntry: (id) => dispatch(startRemoveEntry(id))
 });
 
 

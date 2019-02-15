@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render AuthForm component correctly 1`] = `
+<div
+  className="form-container"
+>
+  <h1
+    className="form-title"
+  />
+  <div
+    className="form-box"
+  >
+    <form
+      className="form form-auth"
+      onSubmit={[Function]}
+    >
+      <input
+        className="form__input"
+        name="email"
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+      <input
+        className="form__input"
+        name="password"
+        onChange={[Function]}
+        type="password"
+        value=""
+      />
+      <button
+        className="btn btn-primary btn-md"
+        disabled={false}
+      />
+    </form>
+  </div>
+</div>
+`;
