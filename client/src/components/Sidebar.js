@@ -8,7 +8,18 @@ import { setTextFilter } from '../actions/filters';
 
 
 
-class Sidebar extends Component {
+export class Sidebar extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            text: ''
+        }
+    }
+    handleTextFilterChange = (e) => {
+        const text = e.target.value;
+        this.setState({text})
+        this.props.onTextFilterChange(text);
+    }
 
     render(){
         return(
@@ -19,11 +30,10 @@ class Sidebar extends Component {
                         <input 
                             className="form-group__control" 
                             type="text" 
-                            name="filter-by-name" 
+                            name="filter-by-name"
+                            value={this.state.textFilter} 
                             placeholder={"Filter by name..."} 
-                            onChange={(e)=>{
-                                this.props.dispatch(setTextFilter(e.target.value));
-                            }} 
+                            onChange={this.handleTextFilterChange} 
                             />
                         <div className="form-group__icon"> 
                             <FontAwesomeIcon icon={faSearch} />
@@ -43,5 +53,7 @@ class Sidebar extends Component {
     };
 }
 
-
-export default connect()(Sidebar);
+const mapDispatchtoProps = (dispatch) => ({
+    onTextFilterChange: (text) => dispatch(setTextFilter(text)) 
+});
+export default connect(undefined, mapDispatchtoProps)(Sidebar);
