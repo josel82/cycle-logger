@@ -1,0 +1,566 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should remove the back button if current path is "dashboard" 1`] = `
+<header
+  className="header"
+>
+  <CSSTransition
+    appear={true}
+    classNames="fade"
+    in={false}
+    onExited={[Function]}
+    timeout={600}
+  >
+    <span
+      className="btn-back false"
+      onClick={[Function]}
+    >
+      <FontAwesomeIcon
+        border={false}
+        className=""
+        fixedWidth={false}
+        flip={null}
+        icon={
+          Object {
+            "icon": Array [
+              448,
+              512,
+              Array [],
+              "f060",
+              "M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z",
+            ],
+            "iconName": "arrow-left",
+            "prefix": "fas",
+          }
+        }
+        inverse={false}
+        listItem={false}
+        mask={null}
+        pull={null}
+        pulse={false}
+        rotation={null}
+        size={null}
+        spin={false}
+        symbol={false}
+        title=""
+        transform={null}
+      />
+    </span>
+  </CSSTransition>
+  <div
+    className="logo-box"
+  >
+    <img
+      alt="Logo"
+      className="logo"
+      src="/assets/img/logo-lg-inv.png"
+    />
+  </div>
+  <nav
+    className="header__navigation "
+  >
+    <ul>
+      <li>
+        <NavLink
+          activeClassName="active"
+          aria-current="page"
+          onClick={[Function]}
+          to="/"
+        >
+          <FontAwesomeIcon
+            border={false}
+            className="header__navigation--icon"
+            fixedWidth={false}
+            flip={null}
+            icon={
+              Object {
+                "icon": Array [
+                  512,
+                  512,
+                  Array [],
+                  "f2f5",
+                  "M497 273L329 441c-15 15-41 4.5-41-17v-96H152c-13.3 0-24-10.7-24-24v-96c0-13.3 10.7-24 24-24h136V88c0-21.4 25.9-32 41-17l168 168c9.3 9.4 9.3 24.6 0 34zM192 436v-40c0-6.6-5.4-12-12-12H96c-17.7 0-32-14.3-32-32V160c0-17.7 14.3-32 32-32h84c6.6 0 12-5.4 12-12V76c0-6.6-5.4-12-12-12H96c-53 0-96 43-96 96v192c0 53 43 96 96 96h84c6.6 0 12-5.4 12-12z",
+                ],
+                "iconName": "sign-out-alt",
+                "prefix": "fas",
+              }
+            }
+            inverse={false}
+            listItem={false}
+            mask={null}
+            pull={null}
+            pulse={false}
+            rotation={null}
+            size={null}
+            spin={false}
+            symbol={false}
+            title=""
+            transform={null}
+          />
+          Log out
+        </NavLink>
+      </li>
+    </ul>
+  </nav>
+  <div
+    className="menu-toggle "
+    onClick={[Function]}
+  >
+    <div
+      className="hamburger"
+    />
+  </div>
+</header>
+`;
+
+exports[`should render Header component correctly 1`] = `
+<header
+  className="header"
+>
+  <CSSTransition
+    appear={true}
+    classNames="fade"
+    in={false}
+    onExited={[Function]}
+    timeout={600}
+  >
+    <span
+      className="btn-back false"
+      onClick={[Function]}
+    >
+      <FontAwesomeIcon
+        border={false}
+        className=""
+        fixedWidth={false}
+        flip={null}
+        icon={
+          Object {
+            "icon": Array [
+              448,
+              512,
+              Array [],
+              "f060",
+              "M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z",
+            ],
+            "iconName": "arrow-left",
+            "prefix": "fas",
+          }
+        }
+        inverse={false}
+        listItem={false}
+        mask={null}
+        pull={null}
+        pulse={false}
+        rotation={null}
+        size={null}
+        spin={false}
+        symbol={false}
+        title=""
+        transform={null}
+      />
+    </span>
+  </CSSTransition>
+  <div
+    className="logo-box"
+  >
+    <img
+      alt="Logo"
+      className="logo"
+      src="/assets/img/logo-lg-inv.png"
+    />
+  </div>
+  <nav
+    className="header__navigation "
+  >
+    <ul>
+      <li>
+        <NavLink
+          activeClassName="active"
+          aria-current="page"
+          onClick={[Function]}
+          to="/"
+        >
+          <FontAwesomeIcon
+            border={false}
+            className="header__navigation--icon"
+            fixedWidth={false}
+            flip={null}
+            icon={
+              Object {
+                "icon": Array [
+                  512,
+                  512,
+                  Array [],
+                  "f2f5",
+                  "M497 273L329 441c-15 15-41 4.5-41-17v-96H152c-13.3 0-24-10.7-24-24v-96c0-13.3 10.7-24 24-24h136V88c0-21.4 25.9-32 41-17l168 168c9.3 9.4 9.3 24.6 0 34zM192 436v-40c0-6.6-5.4-12-12-12H96c-17.7 0-32-14.3-32-32V160c0-17.7 14.3-32 32-32h84c6.6 0 12-5.4 12-12V76c0-6.6-5.4-12-12-12H96c-53 0-96 43-96 96v192c0 53 43 96 96 96h84c6.6 0 12-5.4 12-12z",
+                ],
+                "iconName": "sign-out-alt",
+                "prefix": "fas",
+              }
+            }
+            inverse={false}
+            listItem={false}
+            mask={null}
+            pull={null}
+            pulse={false}
+            rotation={null}
+            size={null}
+            spin={false}
+            symbol={false}
+            title=""
+            transform={null}
+          />
+          Log out
+        </NavLink>
+      </li>
+    </ul>
+  </nav>
+  <div
+    className="menu-toggle "
+    onClick={[Function]}
+  >
+    <div
+      className="hamburger"
+    />
+  </div>
+</header>
+`;
+
+exports[`should render back button if in path other than "dashboard" 1`] = `
+<header
+  className="header"
+>
+  <CSSTransition
+    appear={true}
+    classNames="fade"
+    in={true}
+    onExited={[Function]}
+    timeout={600}
+  >
+    <span
+      className="btn-back false"
+      onClick={[Function]}
+    >
+      <FontAwesomeIcon
+        border={false}
+        className=""
+        fixedWidth={false}
+        flip={null}
+        icon={
+          Object {
+            "icon": Array [
+              448,
+              512,
+              Array [],
+              "f060",
+              "M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z",
+            ],
+            "iconName": "arrow-left",
+            "prefix": "fas",
+          }
+        }
+        inverse={false}
+        listItem={false}
+        mask={null}
+        pull={null}
+        pulse={false}
+        rotation={null}
+        size={null}
+        spin={false}
+        symbol={false}
+        title=""
+        transform={null}
+      />
+    </span>
+  </CSSTransition>
+  <div
+    className="logo-box"
+  >
+    <img
+      alt="Logo"
+      className="logo"
+      src="/assets/img/logo-lg-inv.png"
+    />
+  </div>
+  <nav
+    className="header__navigation "
+  >
+    <ul>
+      <li>
+        <NavLink
+          activeClassName="active"
+          aria-current="page"
+          onClick={[Function]}
+          to="/"
+        >
+          <FontAwesomeIcon
+            border={false}
+            className="header__navigation--icon"
+            fixedWidth={false}
+            flip={null}
+            icon={
+              Object {
+                "icon": Array [
+                  512,
+                  512,
+                  Array [],
+                  "f2f5",
+                  "M497 273L329 441c-15 15-41 4.5-41-17v-96H152c-13.3 0-24-10.7-24-24v-96c0-13.3 10.7-24 24-24h136V88c0-21.4 25.9-32 41-17l168 168c9.3 9.4 9.3 24.6 0 34zM192 436v-40c0-6.6-5.4-12-12-12H96c-17.7 0-32-14.3-32-32V160c0-17.7 14.3-32 32-32h84c6.6 0 12-5.4 12-12V76c0-6.6-5.4-12-12-12H96c-53 0-96 43-96 96v192c0 53 43 96 96 96h84c6.6 0 12-5.4 12-12z",
+                ],
+                "iconName": "sign-out-alt",
+                "prefix": "fas",
+              }
+            }
+            inverse={false}
+            listItem={false}
+            mask={null}
+            pull={null}
+            pulse={false}
+            rotation={null}
+            size={null}
+            spin={false}
+            symbol={false}
+            title=""
+            transform={null}
+          />
+          Log out
+        </NavLink>
+      </li>
+    </ul>
+  </nav>
+  <div
+    className="menu-toggle "
+    onClick={[Function]}
+  >
+    <div
+      className="hamburger"
+    />
+  </div>
+</header>
+`;
+
+exports[`should toggle menu when clicked 1`] = `
+<header
+  className="header"
+>
+  <CSSTransition
+    appear={true}
+    classNames="fade"
+    in={false}
+    onExited={[Function]}
+    timeout={600}
+  >
+    <span
+      className="btn-back false"
+      onClick={[Function]}
+    >
+      <FontAwesomeIcon
+        border={false}
+        className=""
+        fixedWidth={false}
+        flip={null}
+        icon={
+          Object {
+            "icon": Array [
+              448,
+              512,
+              Array [],
+              "f060",
+              "M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z",
+            ],
+            "iconName": "arrow-left",
+            "prefix": "fas",
+          }
+        }
+        inverse={false}
+        listItem={false}
+        mask={null}
+        pull={null}
+        pulse={false}
+        rotation={null}
+        size={null}
+        spin={false}
+        symbol={false}
+        title=""
+        transform={null}
+      />
+    </span>
+  </CSSTransition>
+  <div
+    className="logo-box"
+  >
+    <img
+      alt="Logo"
+      className="logo"
+      src="/assets/img/logo-lg-inv.png"
+    />
+  </div>
+  <nav
+    className="header__navigation header__navigation--open"
+  >
+    <ul>
+      <li>
+        <NavLink
+          activeClassName="active"
+          aria-current="page"
+          onClick={[Function]}
+          to="/"
+        >
+          <FontAwesomeIcon
+            border={false}
+            className="header__navigation--icon"
+            fixedWidth={false}
+            flip={null}
+            icon={
+              Object {
+                "icon": Array [
+                  512,
+                  512,
+                  Array [],
+                  "f2f5",
+                  "M497 273L329 441c-15 15-41 4.5-41-17v-96H152c-13.3 0-24-10.7-24-24v-96c0-13.3 10.7-24 24-24h136V88c0-21.4 25.9-32 41-17l168 168c9.3 9.4 9.3 24.6 0 34zM192 436v-40c0-6.6-5.4-12-12-12H96c-17.7 0-32-14.3-32-32V160c0-17.7 14.3-32 32-32h84c6.6 0 12-5.4 12-12V76c0-6.6-5.4-12-12-12H96c-53 0-96 43-96 96v192c0 53 43 96 96 96h84c6.6 0 12-5.4 12-12z",
+                ],
+                "iconName": "sign-out-alt",
+                "prefix": "fas",
+              }
+            }
+            inverse={false}
+            listItem={false}
+            mask={null}
+            pull={null}
+            pulse={false}
+            rotation={null}
+            size={null}
+            spin={false}
+            symbol={false}
+            title=""
+            transform={null}
+          />
+          Log out
+        </NavLink>
+      </li>
+    </ul>
+  </nav>
+  <div
+    className="menu-toggle open"
+    onClick={[Function]}
+  >
+    <div
+      className="hamburger"
+    />
+  </div>
+</header>
+`;
+
+exports[`should toggle menu when clicked 2`] = `
+<header
+  className="header"
+>
+  <CSSTransition
+    appear={true}
+    classNames="fade"
+    in={false}
+    onExited={[Function]}
+    timeout={600}
+  >
+    <span
+      className="btn-back false"
+      onClick={[Function]}
+    >
+      <FontAwesomeIcon
+        border={false}
+        className=""
+        fixedWidth={false}
+        flip={null}
+        icon={
+          Object {
+            "icon": Array [
+              448,
+              512,
+              Array [],
+              "f060",
+              "M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z",
+            ],
+            "iconName": "arrow-left",
+            "prefix": "fas",
+          }
+        }
+        inverse={false}
+        listItem={false}
+        mask={null}
+        pull={null}
+        pulse={false}
+        rotation={null}
+        size={null}
+        spin={false}
+        symbol={false}
+        title=""
+        transform={null}
+      />
+    </span>
+  </CSSTransition>
+  <div
+    className="logo-box"
+  >
+    <img
+      alt="Logo"
+      className="logo"
+      src="/assets/img/logo-lg-inv.png"
+    />
+  </div>
+  <nav
+    className="header__navigation "
+  >
+    <ul>
+      <li>
+        <NavLink
+          activeClassName="active"
+          aria-current="page"
+          onClick={[Function]}
+          to="/"
+        >
+          <FontAwesomeIcon
+            border={false}
+            className="header__navigation--icon"
+            fixedWidth={false}
+            flip={null}
+            icon={
+              Object {
+                "icon": Array [
+                  512,
+                  512,
+                  Array [],
+                  "f2f5",
+                  "M497 273L329 441c-15 15-41 4.5-41-17v-96H152c-13.3 0-24-10.7-24-24v-96c0-13.3 10.7-24 24-24h136V88c0-21.4 25.9-32 41-17l168 168c9.3 9.4 9.3 24.6 0 34zM192 436v-40c0-6.6-5.4-12-12-12H96c-17.7 0-32-14.3-32-32V160c0-17.7 14.3-32 32-32h84c6.6 0 12-5.4 12-12V76c0-6.6-5.4-12-12-12H96c-53 0-96 43-96 96v192c0 53 43 96 96 96h84c6.6 0 12-5.4 12-12z",
+                ],
+                "iconName": "sign-out-alt",
+                "prefix": "fas",
+              }
+            }
+            inverse={false}
+            listItem={false}
+            mask={null}
+            pull={null}
+            pulse={false}
+            rotation={null}
+            size={null}
+            spin={false}
+            symbol={false}
+            title=""
+            transform={null}
+          />
+          Log out
+        </NavLink>
+      </li>
+    </ul>
+  </nav>
+  <div
+    className="menu-toggle "
+    onClick={[Function]}
+  >
+    <div
+      className="hamburger"
+    />
+  </div>
+</header>
+`;
