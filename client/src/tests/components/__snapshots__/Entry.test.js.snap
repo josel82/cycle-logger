@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Entry correctly 1`] = `
+<tr
+  onClick={[Function]}
+>
+  <td>
+    <p>
+      Placebo
+    </p>
+  </td>
+  <td>
+    <p>
+      20 mg
+    </p>
+  </td>
+  <td>
+    <p>
+      1st Jan, 1970
+    </p>
+  </td>
+</tr>
+`;
