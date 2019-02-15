@@ -1,10 +1,4 @@
-import configureMockStore from 'redux-mock-store';
-import thunk from 'redux-thunk';
-import fakeFirebase from 'firebase/app';
-
-import { login, startLogin, logout, startLogout } from '../../actions/auth';
-
-const createMockStore = configureMockStore([thunk]);
+import { login, logout } from '../../actions/auth';
 
 test('should set up login action object', ()=>{
     const uid = '33sjsdsds7sdd55sfss5stw5w6w7';
