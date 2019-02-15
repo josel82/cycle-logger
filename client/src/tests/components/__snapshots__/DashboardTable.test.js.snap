@@ -1,0 +1,406 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should handle sortByDate 1`] = `
+<Fragment>
+  <table
+    className="table"
+  >
+    <colgroup>
+      <col
+        style={
+          Object {
+            "width": "50%",
+          }
+        }
+      />
+      <col
+        style={
+          Object {
+            "width": "20%",
+          }
+        }
+      />
+      <col
+        style={
+          Object {
+            "width": "30%",
+          }
+        }
+      />
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>
+          Compound
+        </th>
+        <th
+          onClick={[Function]}
+        >
+          Qty 
+        </th>
+        <th
+          onClick={[Function]}
+        >
+          Date 
+          <FontAwesomeIcon
+            border={false}
+            className=""
+            fixedWidth={false}
+            flip={null}
+            icon={
+              Object {
+                "icon": Array [
+                  320,
+                  512,
+                  Array [],
+                  "f107",
+                  "M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z",
+                ],
+                "iconName": "angle-down",
+                "prefix": "fas",
+              }
+            }
+            inverse={false}
+            listItem={false}
+            mask={null}
+            pull={null}
+            pulse={false}
+            rotation={null}
+            size={null}
+            spin={false}
+            symbol={false}
+            title=""
+            transform={null}
+          />
+        </th>
+      </tr>
+      <Connect(withRouter(Entry))
+        compound="Placebo"
+        id="3434343dbdbdbdb23343432nd"
+        key="0"
+        quantity={20}
+        timestamp={0}
+      />
+      <Connect(withRouter(Entry))
+        compound="test"
+        id="3432432n34gdfdd876389398hs"
+        key="1"
+        quantity={15}
+        timestamp={-345600000}
+      />
+      <Connect(withRouter(Entry))
+        compound="stuff"
+        id="cbvxdz7fa65as4s34s3s33ss5s7"
+        key="2"
+        quantity={50}
+        timestamp={345600000}
+      />
+    </tbody>
+  </table>
+  <div
+    className="btn-add btn-floating"
+    onClick={[Function]}
+  >
+    <FontAwesomeIcon
+      border={false}
+      className=""
+      fixedWidth={false}
+      flip={null}
+      icon={
+        Object {
+          "icon": Array [
+            448,
+            512,
+            Array [],
+            "f067",
+            "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
+          ],
+          "iconName": "plus",
+          "prefix": "fas",
+        }
+      }
+      inverse={false}
+      listItem={false}
+      mask={null}
+      pull={null}
+      pulse={false}
+      rotation={null}
+      size={null}
+      spin={false}
+      symbol={false}
+      title=""
+      transform={null}
+    />
+  </div>
+</Fragment>
+`;
+
+exports[`should handle sortByQuantity 1`] = `
+<Fragment>
+  <table
+    className="table"
+  >
+    <colgroup>
+      <col
+        style={
+          Object {
+            "width": "50%",
+          }
+        }
+      />
+      <col
+        style={
+          Object {
+            "width": "20%",
+          }
+        }
+      />
+      <col
+        style={
+          Object {
+            "width": "30%",
+          }
+        }
+      />
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>
+          Compound
+        </th>
+        <th
+          onClick={[Function]}
+        >
+          Qty 
+          <FontAwesomeIcon
+            border={false}
+            className=""
+            fixedWidth={false}
+            flip={null}
+            icon={
+              Object {
+                "icon": Array [
+                  320,
+                  512,
+                  Array [],
+                  "f107",
+                  "M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z",
+                ],
+                "iconName": "angle-down",
+                "prefix": "fas",
+              }
+            }
+            inverse={false}
+            listItem={false}
+            mask={null}
+            pull={null}
+            pulse={false}
+            rotation={null}
+            size={null}
+            spin={false}
+            symbol={false}
+            title=""
+            transform={null}
+          />
+        </th>
+        <th
+          onClick={[Function]}
+        >
+          Date 
+        </th>
+      </tr>
+      <Connect(withRouter(Entry))
+        compound="Placebo"
+        id="3434343dbdbdbdb23343432nd"
+        key="0"
+        quantity={20}
+        timestamp={0}
+      />
+      <Connect(withRouter(Entry))
+        compound="test"
+        id="3432432n34gdfdd876389398hs"
+        key="1"
+        quantity={15}
+        timestamp={-345600000}
+      />
+      <Connect(withRouter(Entry))
+        compound="stuff"
+        id="cbvxdz7fa65as4s34s3s33ss5s7"
+        key="2"
+        quantity={50}
+        timestamp={345600000}
+      />
+    </tbody>
+  </table>
+  <div
+    className="btn-add btn-floating"
+    onClick={[Function]}
+  >
+    <FontAwesomeIcon
+      border={false}
+      className=""
+      fixedWidth={false}
+      flip={null}
+      icon={
+        Object {
+          "icon": Array [
+            448,
+            512,
+            Array [],
+            "f067",
+            "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
+          ],
+          "iconName": "plus",
+          "prefix": "fas",
+        }
+      }
+      inverse={false}
+      listItem={false}
+      mask={null}
+      pull={null}
+      pulse={false}
+      rotation={null}
+      size={null}
+      spin={false}
+      symbol={false}
+      title=""
+      transform={null}
+    />
+  </div>
+</Fragment>
+`;
+
+exports[`should render DashboardTable correctly 1`] = `
+<Fragment>
+  <table
+    className="table"
+  >
+    <colgroup>
+      <col
+        style={
+          Object {
+            "width": "50%",
+          }
+        }
+      />
+      <col
+        style={
+          Object {
+            "width": "20%",
+          }
+        }
+      />
+      <col
+        style={
+          Object {
+            "width": "30%",
+          }
+        }
+      />
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>
+          Compound
+        </th>
+        <th
+          onClick={[Function]}
+        >
+          Qty 
+        </th>
+        <th
+          onClick={[Function]}
+        >
+          Date 
+          <FontAwesomeIcon
+            border={false}
+            className=""
+            fixedWidth={false}
+            flip={null}
+            icon={
+              Object {
+                "icon": Array [
+                  320,
+                  512,
+                  Array [],
+                  "f107",
+                  "M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z",
+                ],
+                "iconName": "angle-down",
+                "prefix": "fas",
+              }
+            }
+            inverse={false}
+            listItem={false}
+            mask={null}
+            pull={null}
+            pulse={false}
+            rotation={null}
+            size={null}
+            spin={false}
+            symbol={false}
+            title=""
+            transform={null}
+          />
+        </th>
+      </tr>
+      <Connect(withRouter(Entry))
+        compound="Placebo"
+        id="3434343dbdbdbdb23343432nd"
+        key="0"
+        quantity={20}
+        timestamp={0}
+      />
+      <Connect(withRouter(Entry))
+        compound="test"
+        id="3432432n34gdfdd876389398hs"
+        key="1"
+        quantity={15}
+        timestamp={-345600000}
+      />
+      <Connect(withRouter(Entry))
+        compound="stuff"
+        id="cbvxdz7fa65as4s34s3s33ss5s7"
+        key="2"
+        quantity={50}
+        timestamp={345600000}
+      />
+    </tbody>
+  </table>
+  <div
+    className="btn-add btn-floating"
+    onClick={[Function]}
+  >
+    <FontAwesomeIcon
+      border={false}
+      className=""
+      fixedWidth={false}
+      flip={null}
+      icon={
+        Object {
+          "icon": Array [
+            448,
+            512,
+            Array [],
+            "f067",
+            "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
+          ],
+          "iconName": "plus",
+          "prefix": "fas",
+        }
+      }
+      inverse={false}
+      listItem={false}
+      mask={null}
+      pull={null}
+      pulse={false}
+      rotation={null}
+      size={null}
+      spin={false}
+      symbol={false}
+      title=""
+      transform={null}
+    />
+  </div>
+</Fragment>
+`;
