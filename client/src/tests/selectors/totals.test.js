@@ -7,6 +7,11 @@ test('should return the total quantity of all compounds', ()=>{
     expect(total).toBe(102);
 });
 
+test('should return 0 if entries array is empty', ()=>{
+    const total = getQuantityTotal([], filters);
+    expect(total).toBe(0);
+});
+
 test('should return total quantity of a specific compound', ()=> {
     filters.text = 'Aminoacids';
     const totalTest = getQuantityTotal(entries, filters);
